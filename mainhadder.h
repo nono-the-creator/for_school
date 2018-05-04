@@ -6,6 +6,8 @@
 #define SCHOOL_PROJECT_MAINHADDER_H
 #include<stdbool.h>
 #include <stdio.h>
+#include <time.h>
+#include<stdlib.h>
 struct date{
     short int day;
     short int month;
@@ -19,6 +21,7 @@ struct apart{
     short int rooms;
     struct date date_of_entrance;
     struct date date_stamp;
+    struct apart* next;
 };
 //shell
 struct commend_list_node{
@@ -28,6 +31,10 @@ struct commend_list_node{
 struct commend_list{
     struct commend_list_node* head;
     struct commend_list_node* tail;
+};
+struct apart_list{
+    struct apart* head;
+    struct apart* tail;
 };
 char **GetString(char *);
 void interpet(char **);
