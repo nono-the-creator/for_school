@@ -1,0 +1,3 @@
+/Users/noamambar/CLionProjects/school_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/noamambar/CLionProjects/school_project/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/noamambar/CLionProjects/school_project/cmake-build-debug/CMakeFiles/school_project.dir
