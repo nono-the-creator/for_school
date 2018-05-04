@@ -123,6 +123,33 @@ school_project/fast:
 	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/build
 .PHONY : school_project/fast
 
+commends.o: commends.c.o
+
+.PHONY : commends.o
+
+# target to build an object file
+commends.c.o:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/commends.c.o
+.PHONY : commends.c.o
+
+commends.i: commends.c.i
+
+.PHONY : commends.i
+
+# target to preprocess a source file
+commends.c.i:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/commends.c.i
+.PHONY : commends.c.i
+
+commends.s: commends.c.s
+
+.PHONY : commends.s
+
+# target to generate assembly for a file
+commends.c.s:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/commends.c.s
+.PHONY : commends.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... school_project"
+	@echo "... commends.o"
+	@echo "... commends.i"
+	@echo "... commends.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
