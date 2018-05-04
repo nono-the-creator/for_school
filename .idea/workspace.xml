@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="commends.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="commends.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commends.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="47" column="73" lean-forward="false" selection-start-line="47" selection-start-column="73" selection-end-line="47" selection-end-column="73" />
+            <state relative-caret-position="90">
+              <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="e#46#64#0" expanded="true" />
               </folding>
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainhadder.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mainhadder.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mainhadder.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="390">
+              <caret line="47" column="131" lean-forward="false" selection-start-line="47" selection-start-column="131" selection-end-line="47" selection-end-column="131" />
               <folding>
                 <element signature="e#119#138#0" expanded="true" />
               </folding>
@@ -80,8 +80,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/main.c" />
-        <option value="$PROJECT_DIR$/mainhadder.h" />
         <option value="$PROJECT_DIR$/commends.c" />
+        <option value="$PROJECT_DIR$/mainhadder.h" />
       </list>
     </option>
   </component>
@@ -164,7 +164,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525428522393</updated>
-      <workItem from="1525428523692" duration="4175000" />
+      <workItem from="1525428523692" duration="4406000" />
     </task>
     <task id="LOCAL-00001" summary="hey youre here">
       <created>1525429198484</created>
@@ -173,11 +173,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525429198484</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="im am coming!">
+      <created>1525432901717</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525432901717</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4175000" />
+    <option name="totallyTimeSpent" value="4406000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -210,7 +217,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hey youre here" />
-    <option name="LAST_COMMIT_MESSAGE" value="hey youre here" />
+    <MESSAGE value="im am coming!" />
+    <option name="LAST_COMMIT_MESSAGE" value="im am coming!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -233,22 +241,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainhadder.h">
+    <entry file="file://$PROJECT_DIR$/commends.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="e#119#138#0" expanded="true" />
+            <element signature="e#46#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commends.c">
+    <entry file="file://$PROJECT_DIR$/mainhadder.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="47" column="73" lean-forward="false" selection-start-line="47" selection-start-column="73" selection-end-line="47" selection-end-column="73" />
+        <state relative-caret-position="390">
+          <caret line="47" column="131" lean-forward="false" selection-start-line="47" selection-start-column="131" selection-end-line="47" selection-end-column="131" />
           <folding>
-            <element signature="e#46#64#0" expanded="true" />
+            <element signature="e#119#138#0" expanded="true" />
           </folding>
         </state>
       </provider>

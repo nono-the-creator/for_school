@@ -58,11 +58,11 @@ void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_r
 }
 //if date1 is later or the same as date2 return true.
 bool is_later (struct date date1,struct date date2) {
-    if (date1.year > date2.year)
+    if (date1.year >= date2.year)
         return true;
     if (date1.year < date2.year)
         return false;
-    if (date1.month > date2.month)
+    if (date1.month >= date2.month)
         return true;
     if (date1.month < date2.month)
         return false;

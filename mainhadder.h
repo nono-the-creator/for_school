@@ -42,6 +42,10 @@ void interpet(char **);
 
 //db queries
 void print_aprt(int maxPrice, int maxRooms, int minRooms, struct date maxDate, bool flag);
+bool is_later (struct date date1,struct date date2) ;
+void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce);
+void print_apart(struct apart apart1);
+struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* next);
 /*
  *
  * input: max price, rooms range and the latest date to enter the apartment.
