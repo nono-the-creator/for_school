@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <time.h>
 #include<stdlib.h>
+#include<stdlib.h>
+#include<string.h>
 struct date{
     short int day;
     short int month;
