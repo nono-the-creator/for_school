@@ -71,3 +71,111 @@ bool is_later (struct date date1,struct date date2) {
     if (date1.day < date2.day)
         return false;
 }
+
+char *gets_dynamic()
+{
+	char *ret;
+	char ch;
+	int size, physize;
+	size = 0;
+	physize = 2;
+	ret = malloc(sizeof(char)*physize);
+	ch = getchar();
+	while(ch!='\n')
+	{
+		if(size >= physize)
+		{
+			physize*=2;
+			ret = realloc(ret, sizeof(char)*physize);
+		}
+		ret[size] = ch;
+		size++;
+	}
+	return ret;
+}
+
+struct date str_to_date(char *str)
+{
+	struct date ret;
+	int temp;
+	temp = atoi(str);
+	ret.year = temp%10000;
+	temp/=10000;
+	ret.month = temp%100;
+	temp/=100;
+	ret.day = temp%100;
+	return ret;
+
+}
+
+void interpert_get(char *str)
+{
+	int max_price, max_rooms, min_rooms;
+	struct date min_date;
+	char *p;
+	p = strtok(str, " ");
+	while(p)
+	{
+		if(strcmp(p,"-MaximumPrice") == 0)
+		{
+			p = strtok(NULL, " ");
+			max_price = atoi(p);
+
+		}
+		else if(strcmp(p, "-MinimumNumRooms") == 0)
+		{
+			p = strtok(NULL, " ");
+			min_rooms = atoi(p);
+		}
+		else if(strcmp(p, "-MaximumNumRooms") == 0)
+		{
+			p = strtok(NULL, " ");
+			max_rooms = atoi(p);
+
+		}
+		else if(strcmp(p, "-Date") == 0)
+		{
+			p = strtok(NULL, " ");
+			min_date = str_to_date(p);
+		}
+		p = strtok(NULL, " ");
+	}
+	// call the print function with the proper paramters
+}
+
+void interpert_add(char *str)
+{
+	char *addr;
+	int price,rooms;
+	struct date dt;
+	addr = strtok(str, " ");
+	price = atoi(strtok(NULL, " "));
+	rooms = atoi(strtok(NULL, " "));
+	//call add with the paramters;
+}
+
+void interpert(char *str)
+{
+	char *command;
+	command = strtok(str, " ");
+	if(strcmp(command, "get-an-apt") == 0)
+	{
+		interpert_get(str + strlen(command));
+	}
+	else if(strcmp(command, "add-an-apt") == 0)
+	{
+		interpert_add(str + strlen(command));
+	}
+	else if(strcmp(command, "buy-an-apt") == 0)
+	{
+		//deal with buy an apt
+	}
+	else if(strcmp(command, "delete-an-apt") == 0)
+	{
+		//deal with delete an apartment
+	}
+	else
+	{
+		printf("Use a proper command!\n");
+	}
+}
