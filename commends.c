@@ -3,7 +3,7 @@
 //
 #include <stdio.h>
 #include "mainhadder.h"
-//creates an apartment and returns a pointer to it.
+//creates an apartment and returns a pointer to it,if theres no value insert -1.
 struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* next)
 {
     time_t epoch;
@@ -22,10 +22,31 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
     return res_apart;
 
 }
+//adding the apartment to the lists tail,fitting the proper code.
+void add_apart_to_last(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance)
+{
+    unsigned  int code;
+    struct apart* p;
+    if(lst->head==NULL)
+    {
+       p=create_apart(1,addr,price,rooms,date_of_entrance,NULL);
+       lst->head=p;
+        lst->tail=p;
+    }
+    else
+    {
+        code=lst->tail->code+1;
+        p=create_apart(code,addr,price,rooms,date_of_entrance,NULL);
+        lst->tail->next=p;
+        lst->tail=p;
+    }
+}
+
+//the "" is getting deleted in the print function.
 void print_apart(struct apart apart1)
 {
     printf("Code: %d \n",apart1.code);
-    printf("Address: %s \n",apart1.addr);
+    printf("Address: %s\b\n ",apart1.addr+1);
     printf("Number of rooms: %d \n",apart1.rooms);
     printf("Price: %d \n",apart1.price);
     printf("Entry date: %d.%d.%d \n",apart1.date_of_entrance.day,apart1.date_of_entrance.month,apart1.date_of_entrance.year);
@@ -47,7 +68,7 @@ void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_r
                 {
                     if(is_later(p->date_of_entrance,min_date_of_enternce)||min_date_of_enternce.day==-1)
                     {
-
+                            print_apart(*p);
                     }
                 }
             }
@@ -56,6 +77,7 @@ void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_r
     }
 
 }
+
 //if date1 is later or the same as date2 return true.
 bool is_later (struct date date1,struct date date2) {
     if (date1.year >= date2.year)
@@ -209,4 +231,27 @@ void interpert(char *str)
 	{
 		printf("Use a proper command!\n");
 	}
+}
+//prints the apartments,by minimun distance from currnet time,the distance is indicated by the variable "days_env"
+void get_an_apart_enter(struct apart_list lst,int days_env)
+{
+    time_t treshhold=time(NULL);
+    struct tm convertor;
+    treshhold=treshhold-(days_env*24*60*60);//the minimum to get printed.
+    time_t current_apart_epoch;
+    struct apart* p;
+    p=lst.head;
+    while(p!=NULL)
+    {
+        convertor.tm_year=p->date_stamp.year;
+        convertor.tm_mday=p->date_stamp.day;
+        convertor.tm_mon=p->date_stamp.month;
+        current_apart_epoch=mktime(&convertor);
+        if(current_apart_epoch>treshhold)
+        {
+            print_apart(*p);
+        }
+
+        p=p->next;
+    }
 }
