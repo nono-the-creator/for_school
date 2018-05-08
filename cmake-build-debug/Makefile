@@ -177,6 +177,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/main.c.s
 .PHONY : main.c.s
 
+prompt.o: prompt.c.o
+
+.PHONY : prompt.o
+
+# target to build an object file
+prompt.c.o:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/prompt.c.o
+.PHONY : prompt.c.o
+
+prompt.i: prompt.c.i
+
+.PHONY : prompt.i
+
+# target to preprocess a source file
+prompt.c.i:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/prompt.c.i
+.PHONY : prompt.c.i
+
+prompt.s: prompt.c.s
+
+.PHONY : prompt.s
+
+# target to generate assembly for a file
+prompt.c.s:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/prompt.c.s
+.PHONY : prompt.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... prompt.o"
+	@echo "... prompt.i"
+	@echo "... prompt.s"
 .PHONY : help
 
 
