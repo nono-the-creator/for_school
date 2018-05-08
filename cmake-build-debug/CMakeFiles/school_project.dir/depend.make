@@ -6,3 +6,6 @@ CMakeFiles/school_project.dir/commends.c.o: ../mainhadder.h
 
 CMakeFiles/school_project.dir/main.c.o: ../main.c
 
+CMakeFiles/school_project.dir/prompt.c.o: ../mainhadder.h
+CMakeFiles/school_project.dir/prompt.c.o: ../prompt.c
+

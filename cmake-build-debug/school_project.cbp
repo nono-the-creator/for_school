@@ -87,6 +87,9 @@
 		<Unit filename="/Users/noamambar/CLionProjects/school_project/mainhadder.h">
 			<Option target="school_project"/>
 		</Unit>
+		<Unit filename="/Users/noamambar/CLionProjects/school_project/prompt.c">
+			<Option target="school_project"/>
+		</Unit>
 		<Unit filename="/Users/noamambar/CLionProjects/school_project/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
