@@ -57,5 +57,6 @@ void get_an_apart_enter(struct apart_list lst,int days_env);
  * output: prints all the apartment that suits the requirements.
  */
 
+struct date str_to_date (char *str);
 
 #endif //SCHOOL_PROJECT_MAINHADDER_H
