@@ -59,6 +59,14 @@ void interpert_get_enter(char *str)
 
 }
 
+void interpert_del_enter(char *str)
+{
+	int days_env;
+	days_env = atoi(strtok(str, " "));
+	//call del_Enter with days_env;
+
+}
+
 void interpert(char *str)
 {
 	char *command;
@@ -81,7 +89,7 @@ void interpert(char *str)
 	}
 	else if(strcmp(command, "delete-an-apt-Enter") == 0)
 	{
-		//deal with delete an apartment
+		interpert_del_enter(str+strlen(command));
 	}
 	else
 	{
