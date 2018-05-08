@@ -153,6 +153,33 @@ void interpert_add(char *str)
 	rooms = atoi(strtok(NULL, " "));
 	//call add with the paramters;
 }
+void buy_apartment(struct apart_list lst, unsigned int code)
+{
+	struct apart **p;
+	struct apart *entry;
+	p = &(lst.head);
+	entry = lst.head;
+	while(entry)
+	{
+		if(entry->code == code) //TODO:Add free
+			*p = entry->next;
+		p = &(entry->next);
+		entry = entry->next;
+	}
+}
+void interpert_buy(char *str)
+{
+	unsigned int code;
+	code = atoi(strtok(str, " "));
+	//call buy with the parameter;
+}
+void interpert_get_enter(char *str)
+{
+	int days_env;
+	days_env = atoi(strtok(str, " "));
+	//call get_Enter with days_env;
+
+}
 
 void interpert(char *str)
 {
@@ -168,9 +195,13 @@ void interpert(char *str)
 	}
 	else if(strcmp(command, "buy-an-apt") == 0)
 	{
-		//deal with buy an apt
+		interpert_buy(str+strlen(command));
 	}
-	else if(strcmp(command, "delete-an-apt") == 0)
+	else if(strcmp(command, "get-an-apt-Enter") == 0)
+	{
+		interpert_get_enter(str+strlen(command));
+	}
+	else if(strcmp(command, "delete-an-apt-Enter") == 0)
 	{
 		//deal with delete an apartment
 	}
