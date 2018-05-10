@@ -10,7 +10,8 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
     time(&epoch);
     struct apart* res_apart;
     res_apart=(struct apart*)malloc(sizeof(struct apart*));
-    res_apart->next=next;
+    res_apart->next=next;\
+    res_apart->prev=prev;
     res_apart->addr=addr;
     res_apart->code=code;
     res_apart->price=price;
@@ -53,7 +54,7 @@ void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int ro
         }
     }
 }
-//finds the prev apart for the price of an apartment.if the prev apartment is the head,returns NULL
+//finds the prev apart for the price of a new apartment.if the prev apartment is the head,returns NULL,if the prev apartment is the tail,returns the tail and changes replace_tail to true.
 struct apart* find_prev(struct apart_list* lst,int price,bool* replace_tail)
 {
     struct apart* p;
