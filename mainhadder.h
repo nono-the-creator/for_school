@@ -24,6 +24,7 @@ struct apart{
     struct date date_of_entrance;
     struct date date_stamp;
     struct apart* next;
+    struct apart* prev;
 };
 //shell
 struct commend_list_node{
@@ -47,8 +48,9 @@ void print_aprt(int maxPrice, int maxRooms, int minRooms, struct date maxDate, b
 bool is_later (struct date date1,struct date date2) ;
 void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce);
 void print_apart(struct apart apart1);
-struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* next);
-void add_apart_to_last(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance);
+struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* next,struct apart* prev);
+void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance);
+struct apart* find_prev(struct apart_list* lst,int price,bool* replace_tail);
 void get_an_apart_enter(struct apart_list lst,int days_env);
 /*
  *
@@ -58,5 +60,6 @@ void get_an_apart_enter(struct apart_list lst,int days_env);
  */
 
 struct date str_to_date (char *str);
+delte_apart_in_env(struct apart_list* lst,int days_env);
 
 #endif //SCHOOL_PROJECT_MAINHADDER_H

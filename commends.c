@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "mainhadder.h"
 //creates an apartment and returns a pointer to it,if theres no value insert -1.
-struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* next)
+struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* prev ,struct apart* next)
 {
     time_t epoch;
     time(&epoch);
@@ -23,25 +23,54 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
 
 }
 //adding the apartment to the lists tail,fitting the proper code.
-void add_apart_to_last(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance)
+void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance)
 {
+    bool replace_tail=false;
     unsigned  int code;
+    struct apart* prev;
     struct apart* p;
     if(lst->head==NULL)
     {
-       p=create_apart(1,addr,price,rooms,date_of_entrance,NULL);
+       p=create_apart(1,addr,price,rooms,date_of_entrance,NULL,NULL);
        lst->head=p;
         lst->tail=p;
     }
     else
     {
-        code=lst->tail->code+1;
-        p=create_apart(code,addr,price,rooms,date_of_entrance,NULL);
-        lst->tail->next=p;
-        lst->tail=p;
+        code=lst->tail->code+1;//we need to fix the code thing by a universal code counter that updates himself in every add of apartment.
+        prev=find_prev(lst,price,&replace_tail);
+        if(prev==NULL)//it means the new apart should be the head.
+        {
+            p=create_apart(code,addr,price,rooms,date_of_entrance,NULL,lst->head);
+            lst->head=p;
+        }
+        else {
+            p = create_apart(code, addr, price, rooms, date_of_entrance, prev, prev->next);
+            lst->tail->next = p;
+            lst->tail = p;
+            if(replace_tail)
+                lst->tail=p;
+        }
     }
 }
+//finds the prev apart for the price of an apartment.if the prev apartment is the head,returns NULL
+struct apart* find_prev(struct apart_list* lst,int price,bool* replace_tail)
+{
+    struct apart* p;
+    p=lst->head;
+    while(p!=NULL)
+    {
+        if(p->price>price&&p->prev!=NULL)
+            return p->prev;
+        if(p->price>price&&p->prev==NULL) //means the head has a smaller price,the new apartment needs to be the new head,returns null.
+            return NULL;
+        p=p->next;
 
+    }
+    *replace_tail=true;
+    return lst->tail;//no apartment is more expensive,needs to be the new tail.replace_tail indicates the fact the tail needs to be replaced with the new apartment created.
+
+}
 //the "" is getting deleted in the print function.
 void print_apart(struct apart apart1)
 {
@@ -103,8 +132,18 @@ char *gets_dynamic()
 	physize = 2;
 	ret = malloc(sizeof(char)*physize);
 	ch = getchar();
+    while (ch=='\b')
+    {
+      ch=getchar();
+    }
+
 	while(ch!='\n')
 	{
+        if(ch=='\b')
+        {
+            size--;
+           ch = getchar();
+        }
 		if(size >= physize)
 		{
 			physize*=2;
@@ -119,8 +158,8 @@ char *gets_dynamic()
 struct date str_to_date(char *str)
 {
 	struct date ret;
-	int temp;
-	temp = atoi(str);
+	short int temp;
+	temp = (short int)atoi(str);
 	ret.year = temp%10000;
 	temp/=10000;
 	ret.month = temp%100;
@@ -130,14 +169,12 @@ struct date str_to_date(char *str)
 
 }
 
-
-
-void buy_apartment(struct apart_list lst, unsigned int code)
+void buy_apartment(struct apart_list* lst, unsigned int code)
 {
 	struct apart **p;
 	struct apart *entry;
-	p = &(lst.head);
-	entry = lst.head;
+	p = &(lst->head);
+	entry = lst->head;
 	while(entry)
 	{
 		if(entry->code == code) //TODO:Add free
@@ -170,3 +207,26 @@ void get_an_apart_enter(struct apart_list lst,int days_env)
         p=p->next;
     }
 }
+delte_apart_in_env(struct apart_list* lst,int days_env)
+{
+    time_t treshhold=time(NULL);
+    struct tm convertor;
+    treshhold=treshhold-(days_env*24*60*60);//the minimum to get printed.
+    time_t current_apart_epoch;
+    struct apart* p;
+    p=lst->head;
+    while(p!=NULL)
+    {
+        convertor.tm_year=p->date_stamp.year;
+        convertor.tm_mday=p->date_stamp.day;
+        convertor.tm_mon=p->date_stamp.month;
+        current_apart_epoch=mktime(&convertor);
+        if(current_apart_epoch>treshhold)
+        {
+
+            buy_apartment(lst,p->code);//because buy is actually deleting an apartment.
+        }
+        p=p->next;
+    }
+}
+
