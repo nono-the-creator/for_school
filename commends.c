@@ -10,7 +10,7 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
     time(&epoch);
     struct apart* res_apart;
     res_apart=(struct apart*)malloc(sizeof(struct apart*));
-    res_apart->next=next;\
+    res_apart->next=next;
     res_apart->prev=prev;
     res_apart->addr=addr;
     res_apart->code=code;
@@ -83,8 +83,16 @@ void print_apart(struct apart apart1)
     printf("Database entry date:%d.%d.%d \n",apart1.date_stamp.day,apart1.date_stamp.month,apart1.date_stamp.year);
 
 }
-// gets all the conditions,and prints the matching apartments,-1 symbols no condition.
-void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce)
+//gets gets all the conditions and sends to the sorted print by sr.
+void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce,bool sr)
+{
+    if(sr)
+        print_by_values_up(lst,max_price,max_rooms,min_rooms,min_date_of_enternce);
+    else
+        print_by_values_down(lst,max_price,max_rooms,min_rooms,min_date_of_enternce);
+}
+// gets all the conditions,and prints the matching apartments,-1 symbols no condition.prints from lowest price to highest
+void print_by_values_up(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce)
 {
     struct apart* p;
     p=lst.head;
@@ -106,8 +114,29 @@ void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_r
         p=p->next;
     }
 
+// gets all the conditions,and prints the matching apartments,-1 symbols no condition.prints from highest price to lowest.
+void print_by_values_down(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce)
+{
+    struct apart* p;
+    p=lst.tail;
+    while(p!=NULL)
+    {
+        if((p->price<max_price||max_price==-1))
+        {
+            if(p->rooms<max_rooms||max_rooms==-1)
+            {
+                if(p->rooms>min_rooms||min_rooms==-1)
+                {
+                    if(is_later(p->date_of_entrance,min_date_of_enternce)||min_date_of_enternce.day==-1)
+                    {
+                        print_apart(*p);
+                    }
+                }
+            }
+        }
+        p=p->prev;
+    }
 }
-
 //if date1 is later or the same as date2 return true.
 bool is_later (struct date date1,struct date date2) {
     if (date1.year >= date2.year)

@@ -46,7 +46,8 @@ void interpet(char **);
 //db queries
 void print_aprt(int maxPrice, int maxRooms, int minRooms, struct date maxDate, bool flag);
 bool is_later (struct date date1,struct date date2) ;
-void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce);
+void print_by_values_down(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce);
+void print_by_values_up(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce);
 void print_apart(struct apart apart1);
 struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* next,struct apart* prev);
 void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance);
