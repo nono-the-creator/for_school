@@ -174,7 +174,7 @@ void buy_apartment(struct apart_list* lst, unsigned int code)
 		entry = entry->next;
 	}
 }
-//prints the apartments,by minimun distance from currnet time,the distance is indicated by the variable "days_env"
+//prints the apartments,by minimum distance from currnet time,the distance is indicated by the variable "days_env"
 void get_an_apart_enter(struct apart_list lst,int days_env)
 {
     time_t treshhold=time(NULL);
@@ -275,12 +275,12 @@ void make_room_for_new_commend_in_array(char** recent_commends_array)
     recent_commends_array[0]=NULL;
 }
 //given a number of a commend,send the commend to be executed.
-void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* lst)
+void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* c_lst,struct apart_list lst)
 {
     int i=0;
-    struct commend_list_node* p=lst->head;
+    struct commend_list_node* p=c_lst->head;
     if(num<=7)
-        interpert(recent_commends_array[num]);
+        interpert(recent_commends_array[num],lst,recent_commends_array,c_lst);
     else
     {
       while(i!=num&&p!=NULL)
@@ -290,7 +290,7 @@ void repeat_commend_by_number(int num, char** recent_commends_array,struct comme
       }
         if(p==NULL)
             return;
-        interpert(p->commend);
+        interpert((p->commend),lst,recent_commends_array,c_lst);
 
     }
 }

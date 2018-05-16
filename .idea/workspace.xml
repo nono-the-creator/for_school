@@ -40,18 +40,18 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="commends.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="commends.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commends.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="295" column="1" lean-forward="true" selection-start-line="295" selection-start-column="1" selection-end-line="295" selection-end-column="1" />
+            <state relative-caret-position="-8">
+              <caret line="248" column="44" lean-forward="false" selection-start-line="248" selection-start-column="44" selection-end-line="248" selection-end-column="44" />
               <folding>
                 <element signature="e#46#64#0" expanded="true" />
                 <element signature="e#89#920#0" expanded="false" />
@@ -66,22 +66,17 @@
                 <element signature="e#5764#6037#0" expanded="false" />
                 <element signature="e#6038#6744#0" expanded="false" />
                 <element signature="e#6745#7432#0" expanded="false" />
-                <element signature="e#7433#7748#0" expanded="false" />
-                <element signature="e#7749#8155#0" expanded="false" />
-                <element signature="e#8156#8547#0" expanded="false" />
-                <element signature="e#8548#8863#0" expanded="false" />
-                <element signature="e#8864#9203#0" expanded="false" />
-                <element signature="e#9204#9654#0" expanded="false" />
+                <element signature="e#7433#7752#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainhadder.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mainhadder.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mainhadder.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="62" column="94" lean-forward="false" selection-start-line="62" selection-start-column="94" selection-end-line="62" selection-end-column="94" />
+            <state relative-caret-position="517">
+              <caret line="63" column="118" lean-forward="false" selection-start-line="63" selection-start-column="118" selection-end-line="63" selection-end-column="118" />
               <folding>
                 <element signature="e#119#138#0" expanded="true" />
               </folding>
@@ -92,10 +87,10 @@
       <file leaf-file-name="prompt.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prompt.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            <state relative-caret-position="-4">
+              <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
               <folding>
-                <marker date="1525782913679" expanded="true" signature="1771:1825" ph="{...}" />
+                <marker date="1526481647821" expanded="true" signature="2541:2595" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -111,8 +106,9 @@
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/main.c" />
-        <option value="$PROJECT_DIR$/mainhadder.h" />
+        <option value="$PROJECT_DIR$/prompt.c" />
         <option value="$PROJECT_DIR$/commends.c" />
+        <option value="$PROJECT_DIR$/mainhadder.h" />
       </list>
     </option>
   </component>
@@ -158,6 +154,119 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/commends.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/main.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mainhadder.h</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/prompt.c</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -202,7 +311,7 @@
       <workItem from="1525897219163" duration="3023000" />
       <workItem from="1526030536536" duration="1965000" />
       <workItem from="1526208957191" duration="1149000" />
-      <workItem from="1526474297453" duration="4728000" />
+      <workItem from="1526474297453" duration="7287000" />
     </task>
     <task id="LOCAL-00001" summary="hey youre here">
       <created>1525429198484</created>
@@ -274,11 +383,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526478063061</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="the great push">
+      <created>1526479080849</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1526479080849</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23160000" />
+    <option name="totallyTimeSpent" value="25719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -315,7 +431,8 @@
     <MESSAGE value="im am coming!" />
     <MESSAGE value="after declaring prototypes." />
     <MESSAGE value="added prev value to apartments,now every add is by price meanning the list is sorted by price so if you want to present from minimum to maximum you go from tail to head,else ,you go from tail to head." />
-    <option name="LAST_COMMIT_MESSAGE" value="added prev value to apartments,now every add is by price meanning the list is sorted by price so if you want to present from minimum to maximum you go from tail to head,else ,you go from tail to head." />
+    <MESSAGE value="the great push" />
+    <option name="LAST_COMMIT_MESSAGE" value="the great push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -355,7 +472,7 @@
         <state relative-caret-position="165">
           <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
-            <marker date="1525782913679" expanded="true" signature="1771:1825" ph="{...}" />
+            <marker date="1526481647821" expanded="true" signature="2541:2595" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -378,12 +495,7 @@
             <element signature="e#5764#6037#0" expanded="false" />
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
-            <element signature="e#7433#7748#0" expanded="false" />
-            <element signature="e#7749#8155#0" expanded="false" />
-            <element signature="e#8156#8547#0" expanded="false" />
-            <element signature="e#8548#8863#0" expanded="false" />
-            <element signature="e#8864#9203#0" expanded="false" />
-            <element signature="e#9204#9654#0" expanded="false" />
+            <element signature="e#7433#7752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -419,7 +531,7 @@
         <state relative-caret-position="165">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
-            <marker date="1525782913679" expanded="true" signature="1771:1825" ph="{...}" />
+            <marker date="1526481647821" expanded="true" signature="2541:2595" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -442,12 +554,7 @@
             <element signature="e#5764#6037#0" expanded="false" />
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
-            <element signature="e#7433#7748#0" expanded="false" />
-            <element signature="e#7749#8155#0" expanded="false" />
-            <element signature="e#8156#8547#0" expanded="false" />
-            <element signature="e#8548#8863#0" expanded="false" />
-            <element signature="e#8864#9203#0" expanded="false" />
-            <element signature="e#9204#9654#0" expanded="false" />
+            <element signature="e#7433#7752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -483,7 +590,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
-            <marker date="1525782913679" expanded="true" signature="1771:1825" ph="{...}" />
+            <marker date="1526481647821" expanded="true" signature="2541:2595" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -506,12 +613,7 @@
             <element signature="e#5764#6037#0" expanded="false" />
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
-            <element signature="e#7433#7748#0" expanded="false" />
-            <element signature="e#7749#8155#0" expanded="false" />
-            <element signature="e#8156#8547#0" expanded="false" />
-            <element signature="e#8548#8863#0" expanded="false" />
-            <element signature="e#8864#9203#0" expanded="false" />
-            <element signature="e#9204#9654#0" expanded="false" />
+            <element signature="e#7433#7752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -547,7 +649,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
-            <marker date="1525782913679" expanded="true" signature="1771:1825" ph="{...}" />
+            <marker date="1526481647821" expanded="true" signature="2541:2595" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -570,12 +672,7 @@
             <element signature="e#5764#6037#0" expanded="false" />
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
-            <element signature="e#7433#7748#0" expanded="false" />
-            <element signature="e#7749#8155#0" expanded="false" />
-            <element signature="e#8156#8547#0" expanded="false" />
-            <element signature="e#8548#8863#0" expanded="false" />
-            <element signature="e#8864#9203#0" expanded="false" />
-            <element signature="e#9204#9654#0" expanded="false" />
+            <element signature="e#7433#7752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -624,12 +721,7 @@
             <element signature="e#5764#6037#0" expanded="false" />
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
-            <element signature="e#7433#7748#0" expanded="false" />
-            <element signature="e#7749#8155#0" expanded="false" />
-            <element signature="e#8156#8547#0" expanded="false" />
-            <element signature="e#8548#8863#0" expanded="false" />
-            <element signature="e#8864#9203#0" expanded="false" />
-            <element signature="e#9204#9654#0" expanded="false" />
+            <element signature="e#7433#7752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -668,12 +760,7 @@
             <element signature="e#5764#6037#0" expanded="false" />
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
-            <element signature="e#7433#7748#0" expanded="false" />
-            <element signature="e#7749#8155#0" expanded="false" />
-            <element signature="e#8156#8547#0" expanded="false" />
-            <element signature="e#8548#8863#0" expanded="false" />
-            <element signature="e#8864#9203#0" expanded="false" />
-            <element signature="e#9204#9654#0" expanded="false" />
+            <element signature="e#7433#7752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -722,12 +809,7 @@
             <element signature="e#5764#6037#0" expanded="false" />
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
-            <element signature="e#7433#7748#0" expanded="false" />
-            <element signature="e#7749#8155#0" expanded="false" />
-            <element signature="e#8156#8547#0" expanded="false" />
-            <element signature="e#8548#8863#0" expanded="false" />
-            <element signature="e#8864#9203#0" expanded="false" />
-            <element signature="e#9204#9654#0" expanded="false" />
+            <element signature="e#7433#7752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -752,36 +834,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prompt.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        <state relative-caret-position="-4">
+          <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
           <folding>
-            <marker date="1525782913679" expanded="true" signature="1771:1825" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainhadder.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="62" column="94" lean-forward="false" selection-start-line="62" selection-start-column="94" selection-end-line="62" selection-end-column="94" />
-          <folding>
-            <element signature="e#119#138#0" expanded="true" />
+            <marker date="1526481647821" expanded="true" signature="2541:2595" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commends.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="295" column="1" lean-forward="true" selection-start-line="295" selection-start-column="1" selection-end-line="295" selection-end-column="1" />
+        <state relative-caret-position="-8">
+          <caret line="248" column="44" lean-forward="false" selection-start-line="248" selection-start-column="44" selection-end-line="248" selection-end-column="44" />
           <folding>
             <element signature="e#46#64#0" expanded="true" />
             <element signature="e#89#920#0" expanded="false" />
@@ -796,12 +868,17 @@
             <element signature="e#5764#6037#0" expanded="false" />
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
-            <element signature="e#7433#7748#0" expanded="false" />
-            <element signature="e#7749#8155#0" expanded="false" />
-            <element signature="e#8156#8547#0" expanded="false" />
-            <element signature="e#8548#8863#0" expanded="false" />
-            <element signature="e#8864#9203#0" expanded="false" />
-            <element signature="e#9204#9654#0" expanded="false" />
+            <element signature="e#7433#7752#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainhadder.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="63" column="118" lean-forward="false" selection-start-line="63" selection-start-column="118" selection-end-line="63" selection-end-column="118" />
+          <folding>
+            <element signature="e#119#138#0" expanded="true" />
           </folding>
         </state>
       </provider>
