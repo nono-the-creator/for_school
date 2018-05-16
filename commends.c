@@ -226,13 +226,13 @@ void make_empty_tm(struct tm* date)
     date->tm_mon=0;
     date->tm_mday=0;
     date->tm_year=0;
-    date->tm_gmtoff=0;
+    //date->tm_gmtoff=0;
     date->tm_hour=0;
     date->tm_isdst=0;
     date->tm_min=0;
     date->tm_sec=0;
     date->tm_wday=0;
-    date->tm_zone=0;
+    //date->tm_zone=0;
     date->tm_yday=0;
 
 }
@@ -280,7 +280,7 @@ void repeat_commend_by_number(int num, char** recent_commends_array,struct comme
     int i=0;
     struct commend_list_node* p=lst->head;
     if(num<=7)
-        interpet(recent_commends_array[num]);
+        interpert(recent_commends_array[num]);
     else
     {
       while(i!=num&&p!=NULL)
@@ -290,7 +290,7 @@ void repeat_commend_by_number(int num, char** recent_commends_array,struct comme
       }
         if(p==NULL)
             return;
-        interpet(p->commend);
+        interpert(p->commend);
 
     }
 }

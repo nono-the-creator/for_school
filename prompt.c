@@ -9,9 +9,9 @@ void interpert_add(char *str, struct apart_list lst)
 	addr = strtok(str, "\"");
 	price = atoi(strtok(NULL, " "));
 	rooms = atoi(strtok(NULL, " "));
-	dt.day = atoi(strtok(NULL, " "));
-	dt.month = atoi(strtok(NULL, " "));
-	dt.year = atoi(strtok(NULL, " "));
+	dt.day = (short)atoi(strtok(NULL, " "));
+	dt.month = (short)atoi(strtok(NULL, " "));
+	dt.year = (short)atoi(strtok(NULL, " "));
 	//call add with the paramters;
 	add_apart_by_price(&lst, addr, price, rooms, dt);
 }
