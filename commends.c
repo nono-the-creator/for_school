@@ -274,3 +274,23 @@ void make_room_for_new_commend_in_array(char** recent_commends_array)
     }
     recent_commends_array[0]=NULL;
 }
+//given a number of a commend,send the commend to be executed.
+void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* lst)
+{
+    int i=0;
+    struct commend_list_node* p=lst->head;
+    if(num<=7)
+        interpet(recent_commends_array[num]);
+    else
+    {
+      while(i!=num&&p!=NULL)
+      {
+          p=p->next;
+          i++;
+      }
+        if(p==NULL)
+            return;
+        interpet(p->commend);
+
+    }
+}

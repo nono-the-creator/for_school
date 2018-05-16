@@ -42,7 +42,7 @@ struct apart_list{
     struct apart* tail;
 };
 char **GetString(char *);
-void interpet(char **);
+void interpet(char *);
 
 
 //db queries
@@ -60,6 +60,7 @@ void make_room_for_new_commend_in_array(char** recent_commends_array);
 struct commend_list_node* create_commend_list_node_and_add_to_head(char* commend,struct commend_list* lst);
 void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst);
 void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,struct commend_list* lst);
+void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* lst);
 
 /*
  *

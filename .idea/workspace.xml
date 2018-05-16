@@ -14,7 +14,6 @@
     <list default="true" id="0a7602ce-df27-4f03-9cee-02449e6369ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/commends.c" afterPath="$PROJECT_DIR$/commends.c" />
-      <change beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
       <change beforePath="$PROJECT_DIR$/mainhadder.h" afterPath="$PROJECT_DIR$/mainhadder.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -51,8 +50,8 @@
       <file leaf-file-name="commends.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commends.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="243" column="37" lean-forward="true" selection-start-line="243" selection-start-column="37" selection-end-line="243" selection-end-column="37" />
+            <state relative-caret-position="712">
+              <caret line="295" column="1" lean-forward="true" selection-start-line="295" selection-start-column="1" selection-end-line="295" selection-end-column="1" />
               <folding>
                 <element signature="e#46#64#0" expanded="true" />
                 <element signature="e#89#920#0" expanded="false" />
@@ -68,6 +67,11 @@
                 <element signature="e#6038#6744#0" expanded="false" />
                 <element signature="e#6745#7432#0" expanded="false" />
                 <element signature="e#7433#7748#0" expanded="false" />
+                <element signature="e#7749#8155#0" expanded="false" />
+                <element signature="e#8156#8547#0" expanded="false" />
+                <element signature="e#8548#8863#0" expanded="false" />
+                <element signature="e#8864#9203#0" expanded="false" />
+                <element signature="e#9204#9654#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -76,8 +80,8 @@
       <file leaf-file-name="mainhadder.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainhadder.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="61" column="106" lean-forward="false" selection-start-line="61" selection-start-column="106" selection-end-line="61" selection-end-column="106" />
+            <state relative-caret-position="532">
+              <caret line="62" column="94" lean-forward="false" selection-start-line="62" selection-start-column="94" selection-end-line="62" selection-end-column="94" />
               <folding>
                 <element signature="e#119#138#0" expanded="true" />
               </folding>
@@ -88,7 +92,7 @@
       <file leaf-file-name="prompt.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prompt.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-61">
+            <state relative-caret-position="165">
               <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
               <folding>
                 <marker date="1525782913679" expanded="true" signature="1771:1825" ph="{...}" />
@@ -198,7 +202,7 @@
       <workItem from="1525897219163" duration="3023000" />
       <workItem from="1526030536536" duration="1965000" />
       <workItem from="1526208957191" duration="1149000" />
-      <workItem from="1526474297453" duration="3722000" />
+      <workItem from="1526474297453" duration="4728000" />
     </task>
     <task id="LOCAL-00001" summary="hey youre here">
       <created>1525429198484</created>
@@ -263,11 +267,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526031883031</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added prev value to apartments,now every add is by price meanning the list is sorted by price so if you want to present from minimum to maximum you go from tail to head,else ,you go from tail to head.">
+      <created>1526478063061</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1526478063061</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22154000" />
+    <option name="totallyTimeSpent" value="23160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -308,7 +319,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -368,6 +379,11 @@
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
             <element signature="e#7433#7748#0" expanded="false" />
+            <element signature="e#7749#8155#0" expanded="false" />
+            <element signature="e#8156#8547#0" expanded="false" />
+            <element signature="e#8548#8863#0" expanded="false" />
+            <element signature="e#8864#9203#0" expanded="false" />
+            <element signature="e#9204#9654#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -427,6 +443,11 @@
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
             <element signature="e#7433#7748#0" expanded="false" />
+            <element signature="e#7749#8155#0" expanded="false" />
+            <element signature="e#8156#8547#0" expanded="false" />
+            <element signature="e#8548#8863#0" expanded="false" />
+            <element signature="e#8864#9203#0" expanded="false" />
+            <element signature="e#9204#9654#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -486,6 +507,11 @@
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
             <element signature="e#7433#7748#0" expanded="false" />
+            <element signature="e#7749#8155#0" expanded="false" />
+            <element signature="e#8156#8547#0" expanded="false" />
+            <element signature="e#8548#8863#0" expanded="false" />
+            <element signature="e#8864#9203#0" expanded="false" />
+            <element signature="e#9204#9654#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -545,6 +571,11 @@
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
             <element signature="e#7433#7748#0" expanded="false" />
+            <element signature="e#7749#8155#0" expanded="false" />
+            <element signature="e#8156#8547#0" expanded="false" />
+            <element signature="e#8548#8863#0" expanded="false" />
+            <element signature="e#8864#9203#0" expanded="false" />
+            <element signature="e#9204#9654#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -594,6 +625,11 @@
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
             <element signature="e#7433#7748#0" expanded="false" />
+            <element signature="e#7749#8155#0" expanded="false" />
+            <element signature="e#8156#8547#0" expanded="false" />
+            <element signature="e#8548#8863#0" expanded="false" />
+            <element signature="e#8864#9203#0" expanded="false" />
+            <element signature="e#9204#9654#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -633,6 +669,11 @@
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
             <element signature="e#7433#7748#0" expanded="false" />
+            <element signature="e#7749#8155#0" expanded="false" />
+            <element signature="e#8156#8547#0" expanded="false" />
+            <element signature="e#8548#8863#0" expanded="false" />
+            <element signature="e#8864#9203#0" expanded="false" />
+            <element signature="e#9204#9654#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -682,6 +723,11 @@
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
             <element signature="e#7433#7748#0" expanded="false" />
+            <element signature="e#7749#8155#0" expanded="false" />
+            <element signature="e#8156#8547#0" expanded="false" />
+            <element signature="e#8548#8863#0" expanded="false" />
+            <element signature="e#8864#9203#0" expanded="false" />
+            <element signature="e#9204#9654#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -714,7 +760,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prompt.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-61">
+        <state relative-caret-position="165">
           <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
             <marker date="1525782913679" expanded="true" signature="1771:1825" ph="{...}" />
@@ -724,8 +770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mainhadder.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="61" column="106" lean-forward="false" selection-start-line="61" selection-start-column="106" selection-end-line="61" selection-end-column="106" />
+        <state relative-caret-position="532">
+          <caret line="62" column="94" lean-forward="false" selection-start-line="62" selection-start-column="94" selection-end-line="62" selection-end-column="94" />
           <folding>
             <element signature="e#119#138#0" expanded="true" />
           </folding>
@@ -734,8 +780,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commends.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="243" column="37" lean-forward="true" selection-start-line="243" selection-start-column="37" selection-end-line="243" selection-end-column="37" />
+        <state relative-caret-position="712">
+          <caret line="295" column="1" lean-forward="true" selection-start-line="295" selection-start-column="1" selection-end-line="295" selection-end-column="1" />
           <folding>
             <element signature="e#46#64#0" expanded="true" />
             <element signature="e#89#920#0" expanded="false" />
@@ -751,6 +797,11 @@
             <element signature="e#6038#6744#0" expanded="false" />
             <element signature="e#6745#7432#0" expanded="false" />
             <element signature="e#7433#7748#0" expanded="false" />
+            <element signature="e#7749#8155#0" expanded="false" />
+            <element signature="e#8156#8547#0" expanded="false" />
+            <element signature="e#8548#8863#0" expanded="false" />
+            <element signature="e#8864#9203#0" expanded="false" />
+            <element signature="e#9204#9654#0" expanded="false" />
           </folding>
         </state>
       </provider>
