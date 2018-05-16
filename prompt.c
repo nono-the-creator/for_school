@@ -1,17 +1,22 @@
 #include "mainhadder.h"
 
-void interpert_add(char *str)
+void interpert_add(char *str, struct apart_list lst);
 {
 	char *addr;
 	int price,rooms;
 	struct date dt;
-	addr = strtok(str, " ");
+	strtok(str, "\"");
+	addr = strtok(str, "\"");
 	price = atoi(strtok(NULL, " "));
 	rooms = atoi(strtok(NULL, " "));
+	dt.day = atoi(strtok(NULL, " "));
+	dt.month = atoi(strtok(NULL, " "));
+	dt.year = atoi(strtok(NULL, " "));
 	//call add with the paramters;
+	add_apart_by_price(lst, addr, price, rooms, dt);
 }
 
-void interpert_get(char *str)
+void interpert_get(char *str, struct apart_list lst)
 {
 	int max_price, max_rooms, min_rooms;
 	struct date min_date;
@@ -45,51 +50,55 @@ void interpert_get(char *str)
 	}
 	// call the print function with the proper paramters
 }
-void interpert_buy(char *str)
+void interpert_buy(char *str, struct apart_list lst)
 {
+	//FIXME: might not work because lst is sent by value.
 	unsigned int code;
 	code = atoi(strtok(str, " "));
+	buy_apartment(&lst, code);
 	//call buy with the parameter;
 }
-void interpert_get_enter(char *str)
+void interpert_get_enter(char *str, struct apart_list lst)
 {
 	int days_env;
 	days_env = atoi(strtok(str, " "));
 	//call get_Enter with days_env;
+	get_an_apart_enter(lst, days_env);
 
 }
 
-void interpert_del_enter(char *str)
+void interpert_del_enter(char *str, struct apart_list lst)
 {
 	int days_env;
 	days_env = atoi(strtok(str, " "));
 	//call del_Enter with days_env;
-
+	//FIXME:might not work because lst is by value.
+	delte_apart_in_env(&lst, days_env);
 }
 
-void interpert(char *str)
+void interpert(char *str, struct apart_list lst)
 {
 	char *command;
 	command = strtok(str, " ");
 	if(strcmp(command, "get-an-apt") == 0)
 	{
-		interpert_get(str + strlen(command));
+		interpert_get(str + strlen(command), lst);
 	}
 	else if(strcmp(command, "add-an-apt") == 0)
 	{
-		interpert_add(str + strlen(command));
+		interpert_add(str + strlen(command), lst);
 	}
 	else if(strcmp(command, "buy-an-apt") == 0)
 	{
-		interpert_buy(str+strlen(command));
+		interpert_buy(str+strlen(command), lst);
 	}
 	else if(strcmp(command, "get-an-apt-Enter") == 0)
 	{
-		interpert_get_enter(str+strlen(command));
+		interpert_get_enter(str+strlen(command), lst);
 	}
 	else if(strcmp(command, "delete-an-apt-Enter") == 0)
 	{
-		interpert_del_enter(str+strlen(command));
+		interpert_del_enter(str+strlen(command), lst);
 	}
 	else
 	{
