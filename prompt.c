@@ -1,6 +1,6 @@
 #include "mainhadder.h"
 
-void interpert_add(char *str, struct apart_list lst);
+void interpert_add(char *str, struct apart_list lst)
 {
 	char *addr;
 	int price,rooms;
@@ -13,7 +13,7 @@ void interpert_add(char *str, struct apart_list lst);
 	dt.month = atoi(strtok(NULL, " "));
 	dt.year = atoi(strtok(NULL, " "));
 	//call add with the paramters;
-	add_apart_by_price(lst, addr, price, rooms, dt);
+	add_apart_by_price(&lst, addr, price, rooms, dt);
 }
 
 void interpert_get(char *str, struct apart_list lst)
@@ -76,9 +76,14 @@ void interpert_del_enter(char *str, struct apart_list lst)
 	delte_apart_in_env(&lst, days_env);
 }
 
-void interpert(char *str, struct apart_list lst)
+void interpert(char *str, struct apart_list lst, char **recent_commends_array, struct commend_list *clst)
 {
 	char *command;
+	if(str[0]== '!')
+	{
+		repeat_commend_by_number(atoi(str+1), recent_commends_array, clst);
+	}
+	commends_saver(str, recent_commends_array, clst);
 	command = strtok(str, " ");
 	if(strcmp(command, "get-an-apt") == 0)
 	{
