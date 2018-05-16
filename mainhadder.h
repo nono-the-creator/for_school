@@ -53,6 +53,7 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
 void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance);
 struct apart* find_prev(struct apart_list* lst,int price,bool* replace_tail);
 void get_an_apart_enter(struct apart_list lst,int days_env);
+void buy_apartment(struct apart_list* lst, unsigned int code);
 /*
  *
  * input: max price, rooms range and the latest date to enter the apartment.
