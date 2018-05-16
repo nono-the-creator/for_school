@@ -18,8 +18,8 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
     res_apart->rooms=rooms;
     res_apart->date_of_entrance=date_of_entrance;
     res_apart->date_stamp.day=(short int)localtime(&epoch)->tm_mday;
-    res_apart->date_stamp.month=(short int)localtime(&epoch)->tm_mon;
-    res_apart->date_stamp.year=(short int)localtime(&epoch)->tm_year;
+    res_apart->date_stamp.month=(short int)localtime(&epoch)->tm_mon+(short int)1;
+    res_apart->date_stamp.year=(short int)localtime(&epoch)->tm_year+(short int)1900;
     return res_apart;
 
 }
@@ -27,7 +27,6 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
 void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance)
 {
     bool replace_tail=false;
-    unsigned  int code;
     struct apart* prev;
     struct apart* p;
     if(lst->head==NULL)
@@ -38,15 +37,14 @@ void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int ro
     }
     else
     {
-        code=lst->tail->code+1;//we need to fix the code thing by a universal code counter that updates himself in every add of apartment.
         prev=find_prev(lst,price,&replace_tail);
         if(prev==NULL)//it means the new apart should be the head.
         {
-            p=create_apart(code,addr,price,rooms,date_of_entrance,NULL,lst->head);
+            p=create_apart(max_code++,addr,price,rooms,date_of_entrance,NULL,lst->head);
             lst->head=p;
         }
         else {
-            p = create_apart(code, addr, price, rooms, date_of_entrance, prev, prev->next);
+            p = create_apart(max_code++, addr, price, rooms, date_of_entrance, prev, prev->next);
             lst->tail->next = p;
             lst->tail = p;
             if(replace_tail)
@@ -92,27 +90,22 @@ void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_r
         print_by_values_down(lst,max_price,max_rooms,min_rooms,min_date_of_enternce);
 }
 // gets all the conditions,and prints the matching apartments,-1 symbols no condition.prints from lowest price to highest
-void print_by_values_up(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce)
-{
-    struct apart* p;
-    p=lst.head;
-    while(p!=NULL)
-    {
-        if((p->price<max_price||max_price==-1))
-        {
-            if(p->rooms<max_rooms||max_rooms==-1)
-            {
-                if(p->rooms>min_rooms||min_rooms==-1)
-                {
-                    if(is_later(p->date_of_entrance,min_date_of_enternce)||min_date_of_enternce.day==-1)
-                    {
-                            print_apart(*p);
+void print_by_values_up(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce) {
+    struct apart *p;
+    p = lst.head;
+    while (p != NULL) {
+        if ((p->price < max_price || max_price == -1)) {
+            if (p->rooms < max_rooms || max_rooms == -1) {
+                if (p->rooms > min_rooms || min_rooms == -1) {
+                    if (is_later(p->date_of_entrance, min_date_of_enternce) || min_date_of_enternce.day == -1) {
+                        print_apart(*p);
                     }
                 }
             }
         }
-        p=p->next;
+        p = p->next;
     }
+}
 
 // gets all the conditions,and prints the matching apartments,-1 symbols no condition.prints from highest price to lowest.
 void print_by_values_down(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce)
@@ -139,11 +132,11 @@ void print_by_values_down(struct apart_list lst,int max_price,int max_rooms,int 
 }
 //if date1 is later or the same as date2 return true.
 bool is_later (struct date date1,struct date date2) {
-    if (date1.year >= date2.year)
+    if (date1.year > date2.year)
         return true;
     if (date1.year < date2.year)
         return false;
-    if (date1.month >= date2.month)
+    if (date1.month > date2.month)
         return true;
     if (date1.month < date2.month)
         return false;
@@ -151,38 +144,7 @@ bool is_later (struct date date1,struct date date2) {
         return true;
     if (date1.day < date2.day)
         return false;
-}
-
-char *gets_dynamic()
-{
-	char *ret;
-	char ch;
-	int size, physize;
-	size = 0;
-	physize = 2;
-	ret = malloc(sizeof(char)*physize);
-	ch = getchar();
-    while (ch=='\b')
-    {
-      ch=getchar();
-    }
-
-	while(ch!='\n')
-	{
-        if(ch=='\b')
-        {
-            size--;
-           ch = getchar();
-        }
-		if(size >= physize)
-		{
-			physize*=2;
-			ret = realloc(ret, sizeof(char)*physize);
-		}
-		ret[size] = ch;
-		size++;
-	}
-	return ret;
+    return false;//we will never get to this result.
 }
 
 struct date str_to_date(char *str)
@@ -190,15 +152,14 @@ struct date str_to_date(char *str)
 	struct date ret;
 	short int temp;
 	temp = (short int)atoi(str);
-	ret.year = temp%10000;
+	ret.year = temp%(short int)10000;
 	temp/=10000;
-	ret.month = temp%100;
+	ret.month = temp%(short int)100;
 	temp/=100;
-	ret.day = temp%100;
+	ret.day = temp%(short int)100;
 	return ret;
 
 }
-
 void buy_apartment(struct apart_list* lst, unsigned int code)
 {
 	struct apart **p;
@@ -213,7 +174,6 @@ void buy_apartment(struct apart_list* lst, unsigned int code)
 		entry = entry->next;
 	}
 }
-
 //prints the apartments,by minimun distance from currnet time,the distance is indicated by the variable "days_env"
 void get_an_apart_enter(struct apart_list lst,int days_env)
 {
@@ -237,7 +197,7 @@ void get_an_apart_enter(struct apart_list lst,int days_env)
         p=p->next;
     }
 }
-delte_apart_in_env(struct apart_list* lst,int days_env)
+void delte_apart_in_env(struct apart_list* lst,int days_env)
 {
     time_t treshhold=time(NULL);
     struct tm convertor;
@@ -247,6 +207,7 @@ delte_apart_in_env(struct apart_list* lst,int days_env)
     p=lst->head;
     while(p!=NULL)
     {
+        make_empty_tm(&convertor);
         convertor.tm_year=p->date_stamp.year;
         convertor.tm_mday=p->date_stamp.day;
         convertor.tm_mon=p->date_stamp.month;
@@ -259,4 +220,77 @@ delte_apart_in_env(struct apart_list* lst,int days_env)
         p=p->next;
     }
 }
+//gets a date and puts all the values to 0.
+void make_empty_tm(struct tm* date)
+{
+    date->tm_mon=0;
+    date->tm_mday=0;
+    date->tm_year=0;
+    date->tm_gmtoff=0;
+    date->tm_hour=0;
+    date->tm_isdst=0;
+    date->tm_min=0;
+    date->tm_sec=0;
+    date->tm_wday=0;
+    date->tm_zone=0;
+    date->tm_yday=0;
 
+}
+void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst)
+{
+    struct commend_list_node* commend_list_node1;
+    commend_list_node1=create_commend_list_node_and_add_to_head(recent_commends_array[7],lst);//adding the last commend in the array to the head of commend list.
+    make_room_for_new_commend_in_array(recent_commends_array);
+    recent_commends_array[0]=commend;
+
+}
+struct commend_list_node* create_commend_list_node_and_add_to_head(char* commend,struct commend_list* lst)
+{
+    struct commend_list_node* commend_list_node1;
+    commend_list_node1=malloc(sizeof(struct commend_list_node));
+    commend_list_node1->commend=commend;
+    commend_list_node1->next=NULL;
+    add_commend_list_node_to_head(commend_list_node1,lst);
+    return commend_list_node1;
+}
+void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,struct commend_list* lst)
+{
+    if(lst->head==NULL)
+    {
+        lst->head=commend_list_node1;
+        lst->tail=commend_list_node1;
+    } else{
+        commend_list_node1->next=lst->head;
+        lst->head=commend_list_node1;
+    }
+}
+//deletes the the oldest commend,and make the newest one NULL,so now new commend can be inserted.assuming size of array is 7.
+void make_room_for_new_commend_in_array(char** recent_commends_array)
+{
+    int i;
+    for(i=0;i<6;i++)
+    {
+        recent_commends_array[i+1]=recent_commends_array[i];
+    }
+    recent_commends_array[0]=NULL;
+}
+//given a number of a commend,send the commend to be executed.
+void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* lst)
+{
+    int i=0;
+    struct commend_list_node* p=lst->head;
+    if(num<=7)
+        interpet(recent_commends_array[num]);
+    else
+    {
+      while(i!=num&&p!=NULL)
+      {
+          p=p->next;
+          i++;
+      }
+        if(p==NULL)
+            return;
+        interpet(p->commend);
+
+    }
+}
