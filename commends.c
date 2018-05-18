@@ -9,7 +9,7 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
     time_t epoch;
     time(&epoch);
     struct apart* res_apart;
-    res_apart=(struct apart*)malloc(sizeof(struct apart*));
+    res_apart=(struct apart*)malloc(sizeof(struct apart));
     res_apart->next=next;
     res_apart->prev=prev;
     res_apart->addr=addr;
@@ -20,6 +20,7 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
     res_apart->date_stamp.day=(short int)localtime(&epoch)->tm_mday;
     res_apart->date_stamp.month=(short int)localtime(&epoch)->tm_mon+(short int)1;
     res_apart->date_stamp.year=(short int)localtime(&epoch)->tm_year+(short int)1900;
+	printf(KRED "Finishing creating the apartment" KNRM "\n");
     return res_apart;
 
 }
@@ -29,6 +30,7 @@ void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int ro
     bool replace_tail=false;
     struct apart* prev;
     struct apart* p;
+	printf(KRED "Got into the add apart" KNRM "\n");
     if(lst->head==NULL)
     {
        p=create_apart(1,addr,price,rooms,date_of_entrance,NULL,NULL);
