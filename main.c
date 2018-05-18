@@ -11,12 +11,13 @@ int main() {
 	aprtlst.head = aprtlst.tail = NULL; //remove
 	cmdlst.head = cmdlst.tail = NULL; //remove
 	commend_array = malloc(sizeof(char *)* 7);
+	printf(">> ");
     gets(command);
     while(strcmp(command, "exit"))
 	{
-		 gets(command);
 		interpert(command, aprtlst, commend_array, &cmdlst);
-
+		printf(">> ");
+		gets(command);
 
 	}
 
