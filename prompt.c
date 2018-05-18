@@ -6,10 +6,15 @@ void interpert_add(char *str, struct apart_list lst)
 	char *addr;
 	int price,rooms;
 	struct date dt;
-	strtok(str, "\"");
+	printf(KRED "Got to add\n" KNRM);
+	printf(KRED "entered string:%s\n" KNRM, str);
+	//strtok(str, "\"");
 	addr = strtok(str, "\"");
+	printf(KRED "addr: %s\n" KNRM, addr);
 	price = atoi(strtok(NULL, " "));
+	printf(KRED "price: %d\n" KNRM, price);
 	rooms = atoi(strtok(NULL, " "));
+	printf(KRED "rooms: %d\n" KNRM, rooms);
 	dt.day = (short)atoi(strtok(NULL, " "));
 	dt.month = (short)atoi(strtok(NULL, " "));
 	dt.year = (short)atoi(strtok(NULL, " "));
@@ -80,31 +85,33 @@ void interpert_del_enter(char *str, struct apart_list lst)
 void interpert(char *str, struct apart_list lst, char **recent_commends_array, struct commend_list *clst)
 {
 	char *command;
+	printf(KRED "Command entered: %s\n" KNRM, str); //DEBUG
 	if(str[0]== '!')
 	{
 		repeat_commend_by_number(atoi(str+1), recent_commends_array, clst,lst);
 	}
 	commends_saver(str, recent_commends_array, clst);
 	command = strtok(str, " ");
+	printf(KRED "Current string %s\n" KNRM, command);
 	if(strcmp(command, "get-an-apt") == 0)
 	{
-		interpert_get(str + strlen(command), lst);
+		interpert_get(str + strlen(command) + 1, lst);
 	}
 	else if(strcmp(command, "add-an-apt") == 0)
 	{
-		interpert_add(str + strlen(command), lst);
+		interpert_add(str + strlen(command) + 1, lst);
 	}
 	else if(strcmp(command, "buy-an-apt") == 0)
 	{
-		interpert_buy(str+strlen(command), lst);
+		interpert_buy(str+strlen(command) + 1, lst);
 	}
 	else if(strcmp(command, "get-an-apt-Enter") == 0)
 	{
-		interpert_get_enter(str+strlen(command), lst);
+		interpert_get_enter(str+strlen(command) + 1, lst);
 	}
 	else if(strcmp(command, "delete-an-apt-Enter") == 0)
 	{
-		interpert_del_enter(str+strlen(command), lst);
+		interpert_del_enter(str+strlen(command) + 1, lst);
 	}
 	else
 	{
