@@ -53,7 +53,7 @@ struct apart_list{
 };
 char **GetString(char *);
 
-void interpert(char *str, struct apart_list lst, char **recent_commends_array, struct commend_list *clst);
+void interpert(char *str, struct apart_list *lst, char **recent_commends_array, struct commend_list *clst);
 
 //db queries
 void print_aprt(int maxPrice, int maxRooms, int minRooms, struct date maxDate, bool flag);

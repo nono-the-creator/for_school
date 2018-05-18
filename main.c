@@ -15,7 +15,7 @@ int main() {
     gets(command);
     while(strcmp(command, "exit"))
 	{
-		interpert(command, aprtlst, commend_array, &cmdlst);
+		interpert(command, &aprtlst, commend_array, &cmdlst);
 		printf(">> ");
 		gets(command);
 
