@@ -282,7 +282,7 @@ void repeat_commend_by_number(int num, char** recent_commends_array,struct comme
     int i=0;
     struct commend_list_node* p=c_lst->head;
     if(num<=7)
-        interpert(recent_commends_array[num],lst,recent_commends_array,c_lst);
+        interpert(recent_commends_array[num], &lst, recent_commends_array, c_lst);
     else
     {
       while(i!=num&&p!=NULL)
@@ -292,7 +292,7 @@ void repeat_commend_by_number(int num, char** recent_commends_array,struct comme
       }
         if(p==NULL)
             return;
-        interpert((p->commend),lst,recent_commends_array,c_lst);
+        interpert((p->commend), &lst, recent_commends_array, c_lst);
 
     }
 }
