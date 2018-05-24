@@ -21,6 +21,7 @@ void interpert_add(char *str, struct apart_list *lst)
 void interpert_get(char *str, struct apart_list lst)
 {
 	int max_price=-1, max_rooms=-1, min_rooms=-1;
+	bool sort = true;
 	struct date min_date;
 	min_date.day = -1;
 	str[strlen(str)]= ' ';
@@ -50,11 +51,16 @@ void interpert_get(char *str, struct apart_list lst)
 			p = strtok(NULL, " ");
 			min_date = str_to_date(p);
 		}
+		else if(strcmp(p, "-sr") == 0)
+		{
+			p = strtok(NULL, " ");
+			sort = false;
+		}
 		p = strtok(NULL, " ");
 	}
 	// call the print function with the proper paramters
 	printf(KRED "Sending print with price: %d, max_rooms: %d, min_rooms: %d" KNRM "\n", max_price, max_rooms, min_rooms);
-	print_by_values(lst, max_price, max_rooms, min_rooms, min_date, true);
+	print_by_values(lst, max_price, max_rooms, min_rooms, min_date, sort);
 }
 void interpert_buy(char *str, struct apart_list *lst)
 {
