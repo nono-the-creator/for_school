@@ -89,6 +89,7 @@ void interpert(char *str, struct apart_list *lst, char **recent_commends_array, 
 	if(str[0]== '!')
 	{
 		repeat_commend_by_number(atoi(str+1), recent_commends_array, clst, *lst);
+		return;
 	}
 	commends_saver(str, recent_commends_array, clst);
 	command = strtok(str, " ");
