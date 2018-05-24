@@ -85,13 +85,16 @@ void interpert_del_enter(char *str, struct apart_list lst)
 void interpert(char *str, struct apart_list *lst, char **recent_commends_array, struct commend_list *clst)
 {
 	char *command;
+	char *copy;
 	printf(KRED "Command entered: %s\n" KNRM, str); //DEBUG
 	if(str[0]== '!')
 	{
 		repeat_commend_by_number(atoi(str+1), recent_commends_array, clst, *lst);
 		return;
 	}
-	commends_saver(str, recent_commends_array, clst);
+	copy = malloc(sizeof(char) * strlen(str));
+	strcpy(copy, str);
+	commends_saver(copy, recent_commends_array, clst);
 	command = strtok(str, " ");
 	printf(KRED "Current string %s\n" KNRM, command);
 	if(strcmp(command, "get-an-apt") == 0)
