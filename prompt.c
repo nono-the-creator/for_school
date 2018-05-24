@@ -96,7 +96,7 @@ void interpert(char *str, struct apart_list *lst, char **recent_commends_array, 
 	if(!str) return;
 	if(str[0]== '!')
 	{
-		repeat_commend_by_number(atoi(str+1), recent_commends_array, clst, *lst);
+		repeat_commend_by_number(atoi(str+1), recent_commends_array, clst, lst);
 		return;
 	}
 	copy = malloc(sizeof(char) * strlen(str));

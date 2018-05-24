@@ -9,6 +9,7 @@ int main() {
 	char **commend_array;
 	max_code = 0;
 	aprtlst.head = aprtlst.tail = NULL; //remove
+	aprtlst = read_apartments();
 	commend_array = malloc(sizeof(char *)* 7);
     initialize_commends_to_null(&cmdlst,commend_array);
     printf(">> ");
@@ -20,5 +21,6 @@ int main() {
 		gets(command);
 
 	}
+	save_apartments(aprtlst);
     return 0;
 }
