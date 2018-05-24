@@ -9,9 +9,9 @@ int main() {
 	char **commend_array;
 	max_code = 0;
 	aprtlst.head = aprtlst.tail = NULL; //remove
-	cmdlst.head = cmdlst.tail = NULL; //remove
 	commend_array = malloc(sizeof(char *)* 7);
-	printf(">> ");
+    initialize_commends_to_null(&cmdlst,commend_array);
+    printf(">> ");
     gets(command);
     while(strcmp(command, "exit"))
 	{
@@ -20,9 +20,5 @@ int main() {
 		gets(command);
 
 	}
-
-
-
-
     return 0;
 }

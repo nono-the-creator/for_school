@@ -19,7 +19,7 @@
 #define KMAG  "\x1B[35m"
 #define KCYN  "\x1B[36m"
 #define KWHT  "\x1B[37m"
-
+#define RECENT_COMMENDS_SIZE 7
 unsigned int max_code;
 struct date{
     short int day;
@@ -73,7 +73,7 @@ struct commend_list_node* create_commend_list_node_and_add_to_head(char* commend
 void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst);
 void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,struct commend_list* lst);
 void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* c_lst,struct apart_list lst);
-
+void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commends_arr);
 /*
  *
  * input: max price, rooms range and the latest date to enter the apartment.
