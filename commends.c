@@ -22,7 +22,6 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
     res_apart->date_stamp.year=(short int)localtime(&epoch)->tm_year+(short int)1900;
 	printf(KRED "Finishing creating the apartment" KNRM "\n");
     return res_apart;
-
 }
 //adding the apartment to the lists tail,fitting the proper code.
 void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance)
@@ -216,7 +215,6 @@ void delte_apart_in_env(struct apart_list* lst,int days_env)
         current_apart_epoch=mktime(&convertor);
         if(current_apart_epoch>treshhold)
         {
-
             buy_apartment(lst,p->code);//because buy is actually deleting an apartment.
         }
         p=p->next;
@@ -276,23 +274,35 @@ void make_room_for_new_commend_in_array(char** recent_commends_array)
     }
     recent_commends_array[0]=NULL;
 }
+
 //given a number of a commend,send the commend to be executed.
-void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* c_lst,struct apart_list lst)
+void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* c_lst,struct apart_list* lst)
 {
     int i=0;
     struct commend_list_node* p=c_lst->head;
     if(num<=7)
-        interpert(recent_commends_array[num], &lst, recent_commends_array, c_lst);
+        interpert(recent_commends_array[num], lst, recent_commends_array, c_lst);
+
     else
     {
-      while(i!=num&&p!=NULL)
-      {
-          p=p->next;
-          i++;
-      }
+        while(i!=num&&p!=NULL)
+        {
+            p=p->next;
+            i++;
+        }
         if(p==NULL)
             return;
-        interpert((p->commend), &lst, recent_commends_array, c_lst);
+        interpert((p->commend), lst, recent_commends_array, c_lst);
 
     }
+}
+void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commends_arr)
+{
+    int i;
+    for(i=0;i< RECENT_COMMENDS_SIZE;i++)
+    {
+        recent_commends_arr[i]=NULL;
+    }
+    c_lst->head=NULL;
+    c_lst->tail=NULL;
 }
