@@ -38,7 +38,7 @@ void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int ro
 	printf(KRED "Got into the add apart" KNRM "\n");
     if(lst->head==NULL)
     {
-       p=create_apart(code,addr,price,rooms,date_of_entrance,NULL,NULL,code,time_stamp);
+       p=create_apart(code,addr,price,rooms,date_of_entrance,NULL,NULL,time_stamp);
        lst->head=p;
         lst->tail=p;
     }
@@ -47,11 +47,11 @@ void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int ro
         prev=find_prev(lst,price,&replace_tail);
         if(prev==NULL)//it means the new apart should be the head.
         {
-            p=create_apart(max_code++,addr,price,rooms,date_of_entrance,NULL,lst->head);
+            p=create_apart(max_code++,addr,price,rooms,date_of_entrance,NULL,lst->head,time_stamp);
             lst->head=p;
         }
         else {
-            p = create_apart(max_code++, addr, price, rooms, date_of_entrance, prev, prev->next);
+            p = create_apart(max_code++, addr, price, rooms, date_of_entrance, prev, prev->next,time_stamp);
             lst->tail->next = p;
             lst->tail = p;
             if(replace_tail)

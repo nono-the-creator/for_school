@@ -4,6 +4,9 @@
 CMakeFiles/school_project.dir/commends.c.o: ../commends.c
 CMakeFiles/school_project.dir/commends.c.o: ../mainhadder.h
 
+CMakeFiles/school_project.dir/commends_data.c.o: ../commends_data.c
+CMakeFiles/school_project.dir/commends_data.c.o: ../mainhadder.h
+
 CMakeFiles/school_project.dir/main.c.o: ../main.c
 CMakeFiles/school_project.dir/main.c.o: ../mainhadder.h
 

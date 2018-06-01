@@ -20,6 +20,8 @@
 #define KCYN  "\x1B[36m"
 #define KWHT  "\x1B[37m"
 #define RECENT_COMMENDS_SIZE 7
+
+#define MAXLINE 1028
 unsigned int max_code;
 struct date{
     short int day;
@@ -72,11 +74,9 @@ void create_commend_list_node_and_add_to_head(char* commend,struct commend_list*
 void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst);
 void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,struct commend_list* lst);
 void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* c_lst,struct apart_list *lst);
-void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commends_arr);
 void save_apartments(struct apart_list lst);
 struct apart_list read_apartments();
 void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance,unsigned int code,struct date time_stamp);
-struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* prev ,struct apart* next,struct date time_stamp);
 /*
  *
  * input: max price, rooms range and the latest date to enter the apartment.
@@ -86,5 +86,8 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
 
 struct date str_to_date (char *str);
 void delte_apart_in_env(struct apart_list* lst,int days_env);
-
+void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr);
+void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_arr);
+void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commends_arr);
+struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* prev ,struct apart* next,struct date time_stamp);
 #endif //SCHOOL_PROJECT_MAINHADDER_H
