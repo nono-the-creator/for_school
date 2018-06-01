@@ -89,6 +89,14 @@ void interpert_del_enter(char *str, struct apart_list lst)
 	delte_apart_in_env(&lst, days_env);
 }
 
+unsigned int got_pow(char *str)
+{
+	int i = 0;
+	while(str[i] != '\0')
+		if(str[i] == '^') return i;
+	return -1;
+}
+
 void interpert(char *str, struct apart_list *lst, char **recent_commends_array, struct commend_list *clst)
 {
 	char *command;
