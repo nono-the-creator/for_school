@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/noamambar/CLionProjects/school_project/commends.c" "/Users/noamambar/CLionProjects/school_project/cmake-build-debug/CMakeFiles/school_project.dir/commends.c.o"
   "/Users/noamambar/CLionProjects/school_project/commends_data.c" "/Users/noamambar/CLionProjects/school_project/cmake-build-debug/CMakeFiles/school_project.dir/commends_data.c.o"
+  "/Users/noamambar/CLionProjects/school_project/io.c" "/Users/noamambar/CLionProjects/school_project/cmake-build-debug/CMakeFiles/school_project.dir/io.c.o"
   "/Users/noamambar/CLionProjects/school_project/main.c" "/Users/noamambar/CLionProjects/school_project/cmake-build-debug/CMakeFiles/school_project.dir/main.c.o"
   "/Users/noamambar/CLionProjects/school_project/prompt.c" "/Users/noamambar/CLionProjects/school_project/cmake-build-debug/CMakeFiles/school_project.dir/prompt.c.o"
   )

@@ -74,19 +74,29 @@ void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commen
 }
 void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr)
 {
-    initialize_commends_to_null(c_lst,recent_commends_arr);
+
     FILE* file;
-    file=fopen("commmends_file","rt");
+    file=fopen("commends_file","w");
     int i;
+    for(i=0;i<7;i++)
+    {
+        printf( "benj:%s \n" ,recent_commends_arr[i]);
+    }
     struct commend_list_node * p;
     p=c_lst->head;
     for(i=0;i<RECENT_COMMENDS_SIZE;i++)
     {
-        fputs(recent_commends_arr[i],file);
+        if(recent_commends_arr[i]!=NULL) {
+            fputs(recent_commends_arr[i], file);
+            fputc('\n',file);
+        }
     }
     while(p!=NULL)
     {
-        fputs(p->commend,file);
+        if(p->commend!=NULL) {
+            fputs(p->commend, file);
+            fputc('\n',file);
+        }
         p = p->next;
     }
     fclose(file);
@@ -94,18 +104,32 @@ void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr
 void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_arr)
 {
     FILE* file;
-    file=fopen("commmends_file","wt");
+    file=fopen("commends_file","rt");
+    char buffer[MAXLINE];
     int i;
     struct commend_list_node * p;
     p=c_lst->head;
-    for(i=0;i<RECENT_COMMENDS_SIZE;i++)
+    for(i=0;i<RECENT_COMMENDS_SIZE&&!feof(file);i++)
     {
-        fgets(recent_commends_arr[i],MAXLINE,file);
+        if(!feof(file)) {
+            fgets(buffer, MAXLINE, file);
+            recent_commends_arr[i]=malloc(sizeof(char)*strlen(buffer));
+            strcpy(recent_commends_arr[i],buffer);
+            recent_commends_arr[i][strlen(buffer)-1]='\0';
+        }
     }
-    while(p!=NULL)
+    while(p!=NULL&&!feof(file))
     {
-        fgets(p->commend,MAXLINE,file);
+        fgets(buffer, MAXLINE, file);
+        p->commend=malloc(sizeof(char)*strlen(buffer)+1);
+        strcpy(p->commend,buffer);
         p = p->next;
+
     }
+    for(i=0;i<7;i++)
+    {
+      printf( "benj:%s" ,recent_commends_arr[i]);
+    }
+
     fclose(file);
 }

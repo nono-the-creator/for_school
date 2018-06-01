@@ -177,6 +177,33 @@ commends_data.c.s:
 	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/commends_data.c.s
 .PHONY : commends_data.c.s
 
+io.o: io.c.o
+
+.PHONY : io.o
+
+# target to build an object file
+io.c.o:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/io.c.o
+.PHONY : io.c.o
+
+io.i: io.c.i
+
+.PHONY : io.i
+
+# target to preprocess a source file
+io.c.i:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/io.c.i
+.PHONY : io.c.i
+
+io.s: io.c.s
+
+.PHONY : io.s
+
+# target to generate assembly for a file
+io.c.s:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/io.c.s
+.PHONY : io.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -246,6 +273,9 @@ help:
 	@echo "... commends_data.o"
 	@echo "... commends_data.i"
 	@echo "... commends_data.s"
+	@echo "... io.o"
+	@echo "... io.i"
+	@echo "... io.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

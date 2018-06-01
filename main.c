@@ -10,7 +10,8 @@ int main() {
 	max_code = 0;
 	aprtlst.head = aprtlst.tail = NULL; //remove
 	aprtlst = read_apartments();
-	commend_array = malloc(sizeof(char *)* 7);
+    commend_array = malloc(sizeof(char *)* 7);
+    initialize_commends_to_null(&cmdlst,commend_array);
     read_commends_from_file(&cmdlst,commend_array);
     printf(">> ");
     gets(command);
@@ -21,7 +22,7 @@ int main() {
 		gets(command);
 
 	}
-	save_commends_to_file(&cmdlst,commend_array);
+    save_commends_to_file(&cmdlst,commend_array);
 
     return 0;
 }
