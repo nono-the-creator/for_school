@@ -5,7 +5,7 @@ void interpert_add(char *str, struct apart_list *lst)
 
 	char *addr;
 	int price,rooms;
-	struct date dt;
+	struct date dt, st;
 	//strtok(str, "\"");
 	addr = strtok(str, "\"");
 	price = atoi(strtok(NULL, " "));
@@ -13,9 +13,10 @@ void interpert_add(char *str, struct apart_list *lst)
 	dt.day = (short)atoi(strtok(NULL, " "));
 	dt.month = (short)atoi(strtok(NULL, " "));
 	dt.year = (short)atoi(strtok(NULL, " "));
+	st.day = -1;
 	//call add with the paramters;
 	printf(KRED "created: addr: %s, price: %d, rooms: %d, day: %d, month: %d, year: %d" KNRM "\n", addr, price, rooms, dt.day, dt.month, dt.year);
-	add_apart_by_price(lst, addr, price, rooms, dt);
+	add_apart_by_price(lst, addr, price, rooms, dt, -1, st);
 }
 
 void interpert_get(char *str, struct apart_list lst)
