@@ -105,6 +105,7 @@ struct apart_list read_apartments()
 		printf(KRED "%d: %d, %d, %d" KNRM "\n", rooms, entdate.day, entdate.month, entdate.year);
 		printf(KRED "Date stamp: %d-%d-%d" KNRM "\n", date_stamp.day, date_stamp.month, date_stamp.year);
 
+		add_apart_by_price(&ret, addr, price, rooms, entdate, code, date_stamp);
 
 	}
 	return ret;
