@@ -47,6 +47,7 @@ void save_apartments(struct apart_list lst)
 		print_binary(binary);
 		fwrite(&binary, 1, 1, fp);
 		binary = 0;
+		printf(KRED "date time on write: %d-%d-%d" KNRM "\n", p->date_stamp.day, p->date_stamp.month, p->date_stamp.year);
 		binary = ((p->date_stamp.day << 3) | (p->date_stamp.month >> 1));
 		print_binary(binary);
 		fwrite(&binary, 1, 1, fp);
@@ -67,7 +68,7 @@ struct apart_list read_apartments()
 	short int len;
 	struct date entdate, date_stamp;
 	FILE *fp;
-	char binary1, binary2, binary3;
+	unsigned char binary1, binary2, binary3;
 	int rflag;
 	ret.head = NULL;
 	ret.tail = NULL;
@@ -93,7 +94,16 @@ struct apart_list read_apartments()
 		entdate.day = ((binary1 << 1) & 0x1E) | binary2>>7;
 		entdate.month = ((binary2 >> 3) & 0x0F);
 		entdate.year = ((binary2 << 4) & 0x70) | binary3>>4;
+
+		fread(&binary1, 1, 1, fp);
+		fread(&binary2, 1, 1, fp);
+		print_binary(binary1);
+		print_binary(binary2);
+		date_stamp.day = binary1 >> 3;
+		date_stamp.month = (0x07 & binary1) << 1 | binary2 >> 7;
+		date_stamp.year = (binary2 & 0x7F);
 		printf(KRED "%d: %d, %d, %d" KNRM "\n", rooms, entdate.day, entdate.month, entdate.year);
+		printf(KRED "Date stamp: %d-%d-%d" KNRM "\n", date_stamp.day, date_stamp.month, date_stamp.year);
 
 
 	}
