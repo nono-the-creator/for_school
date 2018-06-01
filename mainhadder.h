@@ -90,4 +90,6 @@ void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr
 void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_arr);
 void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commends_arr);
 struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* prev ,struct apart* next,struct date time_stamp);
+void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst);
+void printlist(struct commend_list lst);
 #endif //SCHOOL_PROJECT_MAINHADDER_H

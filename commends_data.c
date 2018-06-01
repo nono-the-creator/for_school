@@ -1,6 +1,7 @@
 //
 // Created by noam ambar on 01/06/2018.
 #include "mainhadder.h"
+
 void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst)
 {
     create_commend_list_node_and_add_to_head(recent_commends_array[6],lst);//adding the last commend in the array to the head of commend list.
@@ -118,18 +119,28 @@ void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_a
             recent_commends_arr[i][strlen(buffer)-1]='\0';
         }
     }
-    while(p!=NULL&&!feof(file))
+    while(!feof(file))
     {
+        char*string;
         fgets(buffer, MAXLINE, file);
-        p->commend=malloc(sizeof(char)*strlen(buffer)+1);
-        strcpy(p->commend,buffer);
-        p = p->next;
-
+        string=malloc(sizeof(char)*strlen(buffer));
+        strcpy(string,buffer);
+        string[strlen(buffer)-1]='\0';
+        create_commend_list_node_and_add_to_head(string,c_lst);
     }
-    for(i=0;i<7;i++)
-    {
-      printf( "benj:%s" ,recent_commends_arr[i]);
-    }
-
     fclose(file);
+    printlist(*c_lst);
+}
+void printlist(struct commend_list lst)
+{
+    int i=0;
+    struct commend_list_node *p;
+    p=lst.head;
+    printf("this is the  list of commends:");
+    while (p!=NULL)
+    {
+        printf("%d:%s, ",i,p->commend);
+        p=p->next;
+        i++;
+    }
 }
