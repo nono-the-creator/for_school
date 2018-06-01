@@ -72,21 +72,40 @@ void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commen
     c_lst->head=NULL;
     c_lst->tail=NULL;
 }
-void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_arr)
-{
-    FILE* file;
-    file=fopen("commmends_file","rt");
-}
-//saves the commends upsidedown
 void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr)
 {
+    initialize_commends_to_null(c_lst,recent_commends_arr);
     FILE* file;
     file=fopen("commmends_file","rt");
     int i;
     struct commend_list_node * p;
-    p=c_lst->tail;
+    p=c_lst->head;
     for(i=0;i<RECENT_COMMENDS_SIZE;i++)
     {
-        recent_commends_arr[i]
+        fputs(recent_commends_arr[i],file);
     }
+    while(p!=NULL)
+    {
+        fputs(p->commend,file);
+        p = p->next;
+    }
+    fclose(file);
+}
+void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_arr)
+{
+    FILE* file;
+    file=fopen("commmends_file","wt");
+    int i;
+    struct commend_list_node * p;
+    p=c_lst->head;
+    for(i=0;i<RECENT_COMMENDS_SIZE;i++)
+    {
+        fgets(recent_commends_arr[i],MAXLINE,file);
+    }
+    while(p!=NULL)
+    {
+        fgets(p->commend,MAXLINE,file);
+        p = p->next;
+    }
+    fclose(file);
 }
