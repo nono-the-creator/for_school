@@ -150,6 +150,33 @@ commends.c.s:
 	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/commends.c.s
 .PHONY : commends.c.s
 
+commends_data.o: commends_data.c.o
+
+.PHONY : commends_data.o
+
+# target to build an object file
+commends_data.c.o:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/commends_data.c.o
+.PHONY : commends_data.c.o
+
+commends_data.i: commends_data.c.i
+
+.PHONY : commends_data.i
+
+# target to preprocess a source file
+commends_data.c.i:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/commends_data.c.i
+.PHONY : commends_data.c.i
+
+commends_data.s: commends_data.c.s
+
+.PHONY : commends_data.s
+
+# target to generate assembly for a file
+commends_data.c.s:
+	$(MAKE) -f CMakeFiles/school_project.dir/build.make CMakeFiles/school_project.dir/commends_data.c.s
+.PHONY : commends_data.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -216,6 +243,9 @@ help:
 	@echo "... commends.o"
 	@echo "... commends.i"
 	@echo "... commends.s"
+	@echo "... commends_data.o"
+	@echo "... commends_data.i"
+	@echo "... commends_data.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -81,6 +81,9 @@
 		<Unit filename="/Users/noamambar/CLionProjects/school_project/commends.c">
 			<Option target="school_project"/>
 		</Unit>
+		<Unit filename="/Users/noamambar/CLionProjects/school_project/commends_data.c">
+			<Option target="school_project"/>
+		</Unit>
 		<Unit filename="/Users/noamambar/CLionProjects/school_project/main.c">
 			<Option target="school_project"/>
 		</Unit>

@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "mainhadder.h"
 //creates an apartment and returns a pointer to it,if theres no value insert -1.
-struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* prev ,struct apart* next)
+struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* prev ,struct apart* next,struct date time_stamp)
 {
     time_t epoch;
     time(&epoch);
@@ -17,14 +17,20 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
     res_apart->price=price;
     res_apart->rooms=rooms;
     res_apart->date_of_entrance=date_of_entrance;
-    res_apart->date_stamp.day=(short int)localtime(&epoch)->tm_mday;
-    res_apart->date_stamp.month=(short int)localtime(&epoch)->tm_mon+(short int)1;
-    res_apart->date_stamp.year=(short int)localtime(&epoch)->tm_year+(short int)1900;
+    if(time_stamp.year==-1) {
+        res_apart->date_stamp.day = (short int) localtime(&epoch)->tm_mday;
+        res_apart->date_stamp.month = (short int) localtime(&epoch)->tm_mon + (short int) 1;
+        res_apart->date_stamp.year = (short int) localtime(&epoch)->tm_year + (short int) 1900;
+    }
+    else{
+        res_apart->date_stamp=time_stamp;
+    }
+
 	printf(KRED "Finishing creating the apartment" KNRM "\n");
     return res_apart;
 }
 //adding the apartment to the lists tail,fitting the proper code.
-void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance)
+void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance,unsigned int code,struct date time_stamp)
 {
     bool replace_tail=false;
     struct apart* prev;
@@ -32,7 +38,7 @@ void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int ro
 	printf(KRED "Got into the add apart" KNRM "\n");
     if(lst->head==NULL)
     {
-       p=create_apart(1,addr,price,rooms,date_of_entrance,NULL,NULL);
+       p=create_apart(code,addr,price,rooms,date_of_entrance,NULL,NULL,code,time_stamp);
        lst->head=p;
         lst->tail=p;
     }
@@ -235,74 +241,4 @@ void make_empty_tm(struct tm* date)
     //date->tm_zone=0;
     date->tm_yday=0;
 
-}
-void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst)
-{
-    struct commend_list_node* commend_list_node1;
-    commend_list_node1=create_commend_list_node_and_add_to_head(recent_commends_array[7],lst);//adding the last commend in the array to the head of commend list.
-    make_room_for_new_commend_in_array(recent_commends_array);
-    recent_commends_array[0]=commend;
-
-}
-struct commend_list_node* create_commend_list_node_and_add_to_head(char* commend,struct commend_list* lst)
-{
-    struct commend_list_node* commend_list_node1;
-    commend_list_node1=malloc(sizeof(struct commend_list_node));
-    commend_list_node1->commend=commend;
-    commend_list_node1->next=NULL;
-    add_commend_list_node_to_head(commend_list_node1,lst);
-    return commend_list_node1;
-}
-void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,struct commend_list* lst)
-{
-    if(lst->head==NULL)
-    {
-        lst->head=commend_list_node1;
-        lst->tail=commend_list_node1;
-    } else{
-        commend_list_node1->next=lst->head;
-        lst->head=commend_list_node1;
-    }
-}
-//deletes the the oldest commend,and make the newest one NULL,so now new commend can be inserted.assuming size of array is 7.
-void make_room_for_new_commend_in_array(char** recent_commends_array)
-{
-    int i;
-    for(i=0;i<6;i++)
-    {
-        recent_commends_array[i+1]=recent_commends_array[i];
-    }
-    recent_commends_array[0]=NULL;
-}
-
-//given a number of a commend,send the commend to be executed.
-void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* c_lst,struct apart_list* lst)
-{
-    int i=0;
-    struct commend_list_node* p=c_lst->head;
-    if(num<=7)
-        interpert(recent_commends_array[num], lst, recent_commends_array, c_lst);
-
-    else
-    {
-        while(i!=num&&p!=NULL)
-        {
-            p=p->next;
-            i++;
-        }
-        if(p==NULL)
-            return;
-        interpert((p->commend), lst, recent_commends_array, c_lst);
-
-    }
-}
-void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commends_arr)
-{
-    int i;
-    for(i=0;i< RECENT_COMMENDS_SIZE;i++)
-    {
-        recent_commends_arr[i]=NULL;
-    }
-    c_lst->head=NULL;
-    c_lst->tail=NULL;
 }

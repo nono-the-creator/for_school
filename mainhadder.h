@@ -42,6 +42,7 @@ struct apart{
 struct commend_list_node{
     char* commend;
     struct commend_list_node* next;
+
 };
 struct commend_list{
     struct commend_list_node* head;
@@ -62,20 +63,20 @@ void print_by_values_down(struct apart_list lst,int max_price,int max_rooms,int 
 void print_by_values_up(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce);
 void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce,bool sr);
 void print_apart(struct apart apart1);
-struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* next,struct apart* prev);
-void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance);
 struct apart* find_prev(struct apart_list* lst,int price,bool* replace_tail);
 void get_an_apart_enter(struct apart_list lst,int days_env);
 void buy_apartment(struct apart_list* lst, unsigned int code);
 void make_empty_tm(struct tm* date);
 void make_room_for_new_commend_in_array(char** recent_commends_array);
-struct commend_list_node* create_commend_list_node_and_add_to_head(char* commend,struct commend_list* lst);
+void create_commend_list_node_and_add_to_head(char* commend,struct commend_list* lst);
 void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst);
 void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,struct commend_list* lst);
 void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* c_lst,struct apart_list *lst);
 void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commends_arr);
 void save_apartments(struct apart_list lst);
 struct apart_list read_apartments();
+void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance,unsigned int code,struct date time_stamp);
+struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* prev ,struct apart* next,struct date time_stamp);
 /*
  *
  * input: max price, rooms range and the latest date to enter the apartment.
