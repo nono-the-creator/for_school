@@ -89,12 +89,25 @@ void interpert_del_enter(char *str, struct apart_list lst)
 	delte_apart_in_env(&lst, days_env);
 }
 
-unsigned int got_pow(char *str)
+char *str_replace(char *str, char *orig, char *rep)
 {
-	int i = 0;
-	while(str[i] != '\0')
-		if(str[i] == '^') return i;
-	return -1;
+	char *ret;
+	char *ind;
+	unsigned lenstr, lenorig, lenrep, lenind;
+	lenstr = strlen(str);
+	lenorig = strlen(orig);
+	lenrep = strlen(rep);
+	ret = malloc( sizeof(char) *(lenstr + lenrep - lenorig));
+	ind = strstr(str, orig);
+	lenind = strlen(ind);
+	strncpy(ret, str, lenstr - lenind);
+	strcpy(ret + lenstr - lenind, rep);
+	strcpy(ret + lenstr - lenind + lenrep, str + lenstr - lenind + lenrep + 1 );
+
+	printf(KRED "The string is now: %s" KNRM "\n", ret);
+
+
+	return ret;
 }
 
 void interpert(char *str, struct apart_list *lst, char **recent_commends_array, struct commend_list *clst)
@@ -105,7 +118,7 @@ void interpert(char *str, struct apart_list *lst, char **recent_commends_array, 
 	if(!str) return;
 	if(str[0]== '!')
 	{
-		repeat_commend_by_number(atoi(str+1), recent_commends_array, clst, lst);
+		repeat_commend_by_number(str+1, recent_commends_array, clst, lst);
 		return;
 	}
 	copy = malloc(sizeof(char) * strlen(str));

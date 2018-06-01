@@ -42,12 +42,32 @@ void make_room_for_new_commend_in_array(char** recent_commends_array)
 }
 
 //given a number of a commend,send the commend to be executed.
-void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* c_lst,struct apart_list* lst)
+void repeat_commend_by_number(char *init, char** recent_commends_array,struct commend_list* c_lst,struct apart_list* lst)
 {
     int i=0;
+	int num;
+	char *substring1 = NULL, *substring2 = NULL;
+	char *new;
+	if(!strstr(init, "^"))
+		num = atoi(init);
+	else
+	{
+		num = atoi(strtok(init, "^"));
+		substring1 = strtok(NULL, "^");
+		substring2 = strtok(NULL, "^");
+	}
     struct commend_list_node* p=c_lst->head;
     if(num<=7)
-        interpert(recent_commends_array[num], lst, recent_commends_array, c_lst);
+	{
+		if(!substring1)
+        	interpert(recent_commends_array[num], lst, recent_commends_array, c_lst);
+		else
+		{
+			new = str_replace(recent_commends_array[num],substring1, substring2);
+			interpert(new, lst, recent_commends_array, c_lst);
+		}
+	}
+
 
     else
     {
@@ -58,7 +78,13 @@ void repeat_commend_by_number(int num, char** recent_commends_array,struct comme
         }
         if(p==NULL)
             return;
-        interpert((p->commend), lst, recent_commends_array, c_lst);
+		if(!substring1)
+        	interpert((p->commend), lst, recent_commends_array, c_lst);
+		else
+		{
+			new = str_replace(p->commend, substring1, substring2);
+			interpert(new, lst, recent_commends_array, c_lst);
+		}
 
     }
 }
@@ -76,7 +102,7 @@ void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr
 {
     initialize_commends_to_null(c_lst,recent_commends_arr);
     FILE* file;
-    file=fopen("commmends_file","rt");
+    file=fopen("commmends_file","wt");
     int i;
     struct commend_list_node * p;
     p=c_lst->head;
@@ -94,7 +120,7 @@ void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr
 void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_arr)
 {
     FILE* file;
-    file=fopen("commmends_file","wt");
+    file=fopen("commmends_file","rt");
     int i;
     struct commend_list_node * p;
     p=c_lst->head;
