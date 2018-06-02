@@ -13,7 +13,7 @@ void interpert_add(char *str, struct apart_list *lst)
 	dt.day = (short)atoi(strtok(NULL, " "));
 	dt.month = (short)atoi(strtok(NULL, " "));
 	dt.year = (short)atoi(strtok(NULL, " "));
-	st.day = -1;
+	st.year = -1;
 	//call add with the paramters;
 	printf(KRED "created: addr: %s, price: %d, rooms: %d, day: %d, month: %d, year: %d" KNRM "\n", addr, price, rooms, dt.day, dt.month, dt.year);
 	add_apart_by_price(lst, addr, price, rooms, dt, -1, st);
@@ -89,6 +89,27 @@ void interpert_del_enter(char *str, struct apart_list lst)
 	delte_apart_in_env(&lst, days_env);
 }
 
+char *str_replace(char *str, char *orig, char *rep)
+{
+	char *ret;
+	char *ind;
+	unsigned lenstr, lenorig, lenrep, lenind;
+	lenstr = strlen(str);
+	lenorig = strlen(orig);
+	lenrep = strlen(rep);
+	ret = malloc( sizeof(char) *(lenstr + lenrep - lenorig));
+	ind = strstr(str, orig);
+	lenind = strlen(ind);
+	strncpy(ret, str, lenstr - lenind);
+	strcpy(ret + lenstr - lenind, rep);
+	strcpy(ret + lenstr - lenind + lenrep, str + lenstr - lenind + lenrep + 1 );
+
+	printf(KRED "The string is now: %s" KNRM "\n", ret);
+
+
+	return ret;
+}
+
 void interpert(char *str, struct apart_list *lst, char **recent_commends_array, struct commend_list *clst)
 {
 	char *command;
@@ -97,7 +118,7 @@ void interpert(char *str, struct apart_list *lst, char **recent_commends_array, 
 	if(!str) return;
 	if(str[0]== '!')
 	{
-		repeat_commend_by_number(atoi(str+1), recent_commends_array, clst, lst);
+		repeat_commend_by_number(str+1, recent_commends_array, clst, lst);
 		return;
 	}
 	copy = malloc(sizeof(char) * strlen(str));
