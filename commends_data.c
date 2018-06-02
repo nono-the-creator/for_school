@@ -142,7 +142,6 @@ void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_a
         create_commend_list_node_and_add_to_head(string,c_lst);
     }
     fclose(file);
-    printlist(*c_lst);
 }
 void printlist(struct commend_list lst)
 {
