@@ -1,7 +1,7 @@
 //
 // Created by noam ambar on 01/06/2018.
 #include "mainhadder.h"
-
+void add_commend_list_node_to_tail(struct commend_list_node* commend_list_node1,struct commend_list* lst);
 void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst)
 {
     create_commend_list_node_and_add_to_head(recent_commends_array[6],lst);//adding the last commend in the array to the head of commend list.
@@ -17,8 +17,7 @@ void create_commend_list_node_and_add_to_head(char* commend,struct commend_list*
     commend_list_node1=(struct commend_list_node*)malloc(sizeof(struct commend_list_node));
     commend_list_node1->commend=commend;
     commend_list_node1->next=NULL;
-    add_commend_list_node_to_head(commend_list_node1,lst);
-
+    add_commend_list_node_to_tail(commend_list_node1,lst);
 }
 void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,struct commend_list* lst)
 {
@@ -26,9 +25,20 @@ void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,
     {
         lst->head=commend_list_node1;
         lst->tail=commend_list_node1;
-    } else{
+    }
+    else{
         commend_list_node1->next=lst->head;
         lst->head=commend_list_node1;
+    }
+}void add_commend_list_node_to_tail(struct commend_list_node* commend_list_node1,struct commend_list* lst)
+{
+    if(lst->head==NULL)
+    {
+        lst->head=commend_list_node1;
+        lst->tail=commend_list_node1;
+    } else{
+            lst->tail->next=commend_list_node1;
+            lst->tail=commend_list_node1;
     }
 }
 //deletes the the oldest commend,and make the newest one NULL,so now new commend can be inserted.assuming size of array is 7.
@@ -96,7 +106,10 @@ void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr
     {
         if(p->commend!=NULL) {
             fputs(p->commend, file);
-            fputc('\n',file);
+           if(p->next!=NULL)
+               fputc('\n',file);
+           else
+               fputc(' ',file);
         }
         p = p->next;
     }
