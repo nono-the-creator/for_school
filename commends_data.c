@@ -53,26 +53,33 @@ void make_room_for_new_commend_in_array(char** recent_commends_array)
 }
 
 //given a number of a commend,send the commend to be executed.
-void repeat_commend_by_number(int num, char** recent_commends_array,struct commend_list* c_lst,struct apart_list* lst)
-{
-    int i=0;
-    struct commend_list_node* p=c_lst->head;
-    if(num<=7)
-        interpert(recent_commends_array[num], lst, recent_commends_array, c_lst);
-
-    else
-    {
-        while(i!=num&&p!=NULL)
-        {
-            p=p->next;
-            i++;
-        }
-        if(p==NULL)
-            return;
-        interpert((p->commend), lst, recent_commends_array, c_lst);
-
-    }
+void repeat_commend_by_number(char *init, char** recent_commends_array,struct commend_list* c_lst,struct apart_list* lst)
+ {
+     int i=0;
+	int num;
+	char *substring1 = NULL, *substring2 = NULL;
+	char *new;
+	if(!strstr(init, "^"))
+		num = atoi(init);
+	else
+	{
+		num = atoi(strtok(init, "^"));
+		substring1 = strtok(NULL, "^");
+		substring2 = strtok(NULL, "^");
+	}
+     struct commend_list_node* p=c_lst->head;
+     if(num<=7)
+	{
+		if(!substring1)
+        	interpert(recent_commends_array[num], lst, recent_commends_array, c_lst);
+		else
+		{
+			new = str_replace(recent_commends_array[num],substring1, substring2);
+			interpert(new, lst, recent_commends_array, c_lst);
+		}
+	}
 }
+
 void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commends_arr)
 {
     int i;
