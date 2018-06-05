@@ -3,17 +3,23 @@
 void interpert_add(char *str, struct apart_list *lst)
 {
 
-	char *addr;
+	char *addr, *_addr;
+	int adrlen;
 	int price,rooms;
 	struct date dt, st;
 	//strtok(str, "\"");
-	addr = strtok(str, "\"");
+	_addr = strtok(str, "\"");
+	adrlen = strlen(_addr);
+	addr = malloc(sizeof(char) * (adrlen + 1));
+	strcpy(addr, _addr);
+	addr[adrlen + 1] = '\0';
 	price = atoi(strtok(NULL, " "));
 	rooms = atoi(strtok(NULL, " "));
 	dt.day = (short)atoi(strtok(NULL, " "));
 	dt.month = (short)atoi(strtok(NULL, " "));
 	dt.year = (short)atoi(strtok(NULL, " "));
 	st.year = -1;
+
 	//call add with the paramters;
 	printf(KRED "created: addr: %s, price: %d, rooms: %d, day: %d, month: %d, year: %d" KNRM "\n", addr, price, rooms, dt.day, dt.month, dt.year);
 	add_apart_by_price(lst, addr, price, rooms, dt, -1, st);
