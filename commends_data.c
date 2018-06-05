@@ -49,6 +49,7 @@ void repeat_commend_by_number(char *init, char** recent_commends_array,struct co
 	int num;
 	char *substring1 = NULL, *substring2 = NULL;
 	char *new;
+	char buff[MAXLINE];
 	if(!strstr(init, "^"))
 		num = atoi(init);
 	else
@@ -59,7 +60,24 @@ void repeat_commend_by_number(char *init, char** recent_commends_array,struct co
 	}
      num=commends_amount-num;//reaches the "num" oldest commend in the data base.
      struct commend_list_node* p=c_lst->head;
-     if(num<=7)
+	 if(num<=7)
+		 strcpy(buff,recent_commends_array[num]);
+	 else
+	{
+		 for(int i=0;i<num-7;i++)
+		 {
+			 if(p) p = p->next;
+		 }
+		strcpy(buff, p->commend);
+	}
+	if(!substring1)
+		interpert(buff, lst, recent_commends_array, c_lst);
+	 else
+	{
+		new = str_replace(buff, substring1, substring2);
+		interpert(new, lst, recent_commends_array, c_lst);
+	}
+    /* if(num<=7)
 	{
 		if(!substring1)
         	interpert(recent_commends_array[num], lst, recent_commends_array, c_lst);
@@ -68,7 +86,7 @@ void repeat_commend_by_number(char *init, char** recent_commends_array,struct co
 			new = str_replace(recent_commends_array[num],substring1, substring2);
 			interpert(new, lst, recent_commends_array, c_lst);
 		}
-	}
+	}*/
 }
 
 void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commends_arr)

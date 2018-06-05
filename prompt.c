@@ -128,7 +128,7 @@ void interpert(char *str, struct apart_list *lst, char **recent_commends_array, 
 		repeat_commend_by_number(str+1, recent_commends_array, clst, lst);
 		return;
 	}
-	copy = malloc(sizeof(char) * strlen(str));
+	copy = malloc(sizeof(char) * strlen(str) + 1);
 	strcpy(copy, str);
 	commends_saver(copy, recent_commends_array, clst);
 	command = strtok(str, " ");

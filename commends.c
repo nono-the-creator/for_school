@@ -85,7 +85,7 @@ struct apart* find_prev(struct apart_list* lst,int price,bool* replace_tail)
 void print_apart(struct apart apart1)
 {
     printf("Code: %d \n",apart1.code);
-    printf("Address: %s\b\n ",apart1.addr+1);
+    printf("Address: %s\n ",apart1.addr);
     printf("Number of rooms: %d \n",apart1.rooms);
     printf("Price: %d \n",apart1.price);
     printf("Entry date: %d.%d.%d \n",apart1.date_of_entrance.day,apart1.date_of_entrance.month,apart1.date_of_entrance.year);
