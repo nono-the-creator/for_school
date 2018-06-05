@@ -10,7 +10,7 @@ int main() {
 	aprtlst = read_apartments();
     commend_array = malloc(sizeof(char *)* 7);
     initialize_commends_to_null(&cmdlst,commend_array);
-    //read_commends_from_file(&cmdlst,commend_array);
+    read_commends_from_file(&cmdlst,commend_array);
     printf(">> ");
     gets(command);
     while(strcmp(command, "exit"))
@@ -21,6 +21,7 @@ int main() {
 
 	}
     save_commends_to_file(&cmdlst,commend_array);
+	save_apartments(aprtlst);
 
     return 0;
 }

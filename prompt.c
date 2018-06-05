@@ -105,10 +105,11 @@ char *str_replace(char *str, char *orig, char *rep)
 	lenrep = strlen(rep);
 	ret = malloc( sizeof(char) *(lenstr + lenrep - lenorig));
 	ind = strstr(str, orig);
+	if(!ind) return NULL;
 	lenind = strlen(ind);
 	strncpy(ret, str, lenstr - lenind);
 	strcpy(ret + lenstr - lenind, rep);
-	strcpy(ret + lenstr - lenind + lenrep, str + lenstr - lenind + lenrep + 1 );
+	strcpy(ret + lenstr - lenind + lenrep, str + lenstr - lenind + lenrep );
 
 	printf(KRED "The string is now: %s" KNRM "\n", ret);
 
