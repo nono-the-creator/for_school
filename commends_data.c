@@ -143,13 +143,13 @@ void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_a
     p=c_lst->head;
     for(i=0;i<RECENT_COMMENDS_SIZE;i++)
     {
-        if(!feof(file)) {
+
             fgets(buffer, MAXLINE, file);
+        if(!feof(file)) {
             recent_commends_arr[i]=malloc(sizeof(char)*strlen(buffer));
             strcpy(recent_commends_arr[i],buffer);
             recent_commends_arr[i][strlen(buffer)-1]='\0';
             commends_amount++;
-            a= (int) ftell(file);
         }
 
     }
