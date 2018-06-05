@@ -90,7 +90,6 @@ void repeat_commend_by_number(char *init, char** recent_commends_array,struct co
 		}
 	}*/
 }
-
 void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commends_arr)
 {
     int i;
@@ -139,17 +138,20 @@ void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_a
         return;
     }
     char buffer[MAXLINE];
-    int i;
+    int i,a,b;
     struct commend_list_node * p;
     p=c_lst->head;
-    for(i=0;i<RECENT_COMMENDS_SIZE&&!feof(file);i++)
+    for(i=0;i<RECENT_COMMENDS_SIZE;i++)
     {
         if(!feof(file)) {
             fgets(buffer, MAXLINE, file);
             recent_commends_arr[i]=malloc(sizeof(char)*strlen(buffer));
             strcpy(recent_commends_arr[i],buffer);
             recent_commends_arr[i][strlen(buffer)-1]='\0';
+            commends_amount++;
+            a= (int) ftell(file);
         }
+
     }
     while(!feof(file))
     {
@@ -159,6 +161,7 @@ void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_a
         strcpy(string,buffer);
         string[strlen(buffer)-1]='\0';
         create_commend_list_node_and_add_to_head(string,c_lst);
+        commends_amount++;
     }
     fclose(file); }
 void printlist(struct commend_list lst)
@@ -169,18 +172,19 @@ void printlist(struct commend_list lst)
     printf("\nthis is the  list of commends:");
     while (p!=NULL)
     {
-        printf("%d:%s, ",i,p->commend);
+        printf("%s\n",p->commend);
         p=p->next;
         i++;
     }
 }
-void print_com_arr( char** arr)
+void print_com_arr(char** arr)
 {
   int i=0;
     printf("\nthis is the array of commends:");
-    for(i=0;i<RECENT_COMMENDS_SIZE&&(arr[i]!= NULL);i++)
+    for(i=0;i<RECENT_COMMENDS_SIZE;i++)
     {
-        printf("%s\n",arr[i]);
+        if(arr[i]!=NULL)
+         printf("\n%s",arr[i]);
     }
 }
 void history (struct commend_list lst,char** arr)

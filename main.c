@@ -14,13 +14,14 @@ int main() {
     initialize_commends_to_null(&cmdlst,commend_array);
     read_commends_from_file(&cmdlst,commend_array);
     printf(">> ");
+    history(cmdlst,commend_array);
     gets(command);
     while(strcmp(command, "exit"))
 	{
-        history(cmdlst,commend_array);
 		interpert(command, &aprtlst, commend_array, &cmdlst);
 		printf(">> ");
 		gets(command);
+        history(cmdlst,commend_array);
 
     }
     save_commends_to_file(&cmdlst,commend_array);
