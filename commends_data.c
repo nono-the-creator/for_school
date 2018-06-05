@@ -50,7 +50,9 @@ void repeat_commend_by_number(char *init, char** recent_commends_array,struct co
 	char *substring1 = NULL, *substring2 = NULL;
 	char *new;
 	char buff[MAXLINE];
-	if(!strstr(init, "^"))
+	 if(init[0] == '\0')
+		 num = 1;
+	else if(!strstr(init, "^"))
 		num = atoi(init);
 	else
 	{
