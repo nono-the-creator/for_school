@@ -20,7 +20,7 @@
 #define KCYN  "\x1B[36m"
 #define KWHT  "\x1B[37m"
 #define RECENT_COMMENDS_SIZE 7
-
+int commends_amount=0;
 #define MAXLINE 1028
 struct date{
     short int day;
