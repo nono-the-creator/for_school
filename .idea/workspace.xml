@@ -13,9 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a7602ce-df27-4f03-9cee-02449e6369ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/commends_data.c" afterPath="$PROJECT_DIR$/commends_data.c" />
-      <change beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
-      <change beforePath="$PROJECT_DIR$/mainhadder.h" afterPath="$PROJECT_DIR$/mainhadder.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -356,7 +353,7 @@
       <workItem from="1526636988614" duration="616000" />
       <workItem from="1527152398835" duration="9077000" />
       <workItem from="1527841414084" duration="17871000" />
-      <workItem from="1528208255716" duration="15667000" />
+      <workItem from="1528208255716" duration="15704000" />
     </task>
     <task id="LOCAL-00001" summary="hey youre here">
       <created>1525429198484</created>
@@ -540,11 +537,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528227105157</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="worksssssss">
+      <created>1528228734190</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1528228734190</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72027000" />
+    <option name="totallyTimeSpent" value="72064000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,7 +602,8 @@
     <MESSAGE value="runs without a file of commends in exist" />
     <MESSAGE value="changed the ! order." />
     <MESSAGE value="phone at home" />
-    <option name="LAST_COMMIT_MESSAGE" value="phone at home" />
+    <MESSAGE value="worksssssss" />
+    <option name="LAST_COMMIT_MESSAGE" value="worksssssss" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
