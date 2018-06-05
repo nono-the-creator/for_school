@@ -66,7 +66,7 @@ void interpert_get(char *str, struct apart_list lst)
 		p = strtok(NULL, " ");
 	}
 	// call the print function with the proper paramters
-	printf(KRED "Sending print with price: %d, max_rooms: %d, min_rooms: %d" KNRM "\n", max_price, max_rooms, min_rooms);
+	printf(KRED "Sending print with price: %d, max_rooms: %d, min_rooms: %d sort %d" KNRM "\n", max_price, max_rooms, min_rooms,sort);
 	print_by_values(lst, max_price, max_rooms, min_rooms, min_date, sort);
 }
 void interpert_buy(char *str, struct apart_list *lst)
@@ -121,6 +121,12 @@ void interpert(char *str, struct apart_list *lst, char **recent_commends_array, 
 {
 	char *command;
 	char *copy;
+	if(str==NULL) {
+		printf("Use a proper command!\n");
+		return;
+	}
+
+
 	printf(KRED "Command entered: %s\n" KNRM, str); //DEBUG
 	if(!str) return;
 	if(str[0]== '!')

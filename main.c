@@ -2,7 +2,8 @@
 #include "mainhadder.h"
 
 int main() {
-	struct apart_list aprtlst;
+    int commends_amount=0;
+    struct apart_list aprtlst;
 	struct commend_list cmdlst;
 	char command[128];
 	char **commend_array;
@@ -16,11 +17,12 @@ int main() {
     gets(command);
     while(strcmp(command, "exit"))
 	{
+        history(cmdlst,commend_array);
 		interpert(command, &aprtlst, commend_array, &cmdlst);
 		printf(">> ");
 		gets(command);
 
-	}
+    }
     save_commends_to_file(&cmdlst,commend_array);
 	save_apartments(aprtlst);
 

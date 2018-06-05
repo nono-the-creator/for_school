@@ -166,11 +166,25 @@ void printlist(struct commend_list lst)
     int i=0;
     struct commend_list_node *p;
     p=lst.head;
-    printf("this is the  list of commends:");
+    printf("\nthis is the  list of commends:");
     while (p!=NULL)
     {
         printf("%d:%s, ",i,p->commend);
         p=p->next;
         i++;
     }
+}
+void print_com_arr( char** arr)
+{
+  int i=0;
+    printf("\nthis is the array of commends:");
+    for(i=0;i<RECENT_COMMENDS_SIZE&&(arr[i]!= NULL);i++)
+    {
+        printf("%s\n",arr[i]);
+    }
+}
+void history (struct commend_list lst,char** arr)
+{
+    print_com_arr(arr);
+    printlist(lst);
 }

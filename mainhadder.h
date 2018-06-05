@@ -93,4 +93,6 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
 void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst);
 void printlist(struct commend_list lst);
 unsigned int max_between_codes(unsigned int a,unsigned int b);
+void print_com_arr( char** arr);
+void history (struct commend_list lst,char** arr);
 #endif //SCHOOL_PROJECT_MAINHADDER_H
