@@ -4,6 +4,7 @@
 void add_commend_list_node_to_tail(struct commend_list_node* commend_list_node1,struct commend_list* lst);
 void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst)
 {
+    commends_amount++;
     create_commend_list_node_and_add_to_head(recent_commends_array[6],lst);//adding the last commend in the array to the head of commend list.
     make_room_for_new_commend_in_array(recent_commends_array);
     recent_commends_array[0]=commend;
@@ -19,18 +20,7 @@ void create_commend_list_node_and_add_to_head(char* commend,struct commend_list*
     commend_list_node1->next=NULL;
     add_commend_list_node_to_tail(commend_list_node1,lst);
 }
-void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,struct commend_list* lst)
-{
-    if(lst->head==NULL)
-    {
-        lst->head=commend_list_node1;
-        lst->tail=commend_list_node1;
-    }
-    else{
-        commend_list_node1->next=lst->head;
-        lst->head=commend_list_node1;
-    }
-}void add_commend_list_node_to_tail(struct commend_list_node* commend_list_node1,struct commend_list* lst)
+void add_commend_list_node_to_tail(struct commend_list_node* commend_list_node1,struct commend_list* lst)
 {
     if(lst->head==NULL)
     {
@@ -67,6 +57,7 @@ void repeat_commend_by_number(char *init, char** recent_commends_array,struct co
 		substring1 = strtok(NULL, "^");
 		substring2 = strtok(NULL, "^");
 	}
+     num=commends_amount-num;//reaches the "num" oldest commend in the data base.
      struct commend_list_node* p=c_lst->head;
      if(num<=7)
 	{
