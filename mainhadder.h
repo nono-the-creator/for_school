@@ -22,7 +22,6 @@
 #define RECENT_COMMENDS_SIZE 7
 
 #define MAXLINE 1028
-unsigned int max_code;
 struct date{
     short int day;
     short int month;
@@ -93,4 +92,5 @@ void initialize_commends_to_null(struct commend_list* c_lst,char** recent_commen
 struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* prev ,struct apart* next,struct date time_stamp);
 void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst);
 void printlist(struct commend_list lst);
+unsigned int max_between_codes(unsigned int a,unsigned int b);
 #endif //SCHOOL_PROJECT_MAINHADDER_H

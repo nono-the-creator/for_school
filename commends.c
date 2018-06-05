@@ -32,6 +32,9 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
 //adding the apartment to the lists tail,fitting the proper code.
 void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance,unsigned int code,struct date time_stamp)
 {
+    static unsigned int max_code=0;
+    if(code==-1)
+        code=max_code++;
     bool replace_tail=false;
     struct apart* prev;
     struct apart* p;
@@ -47,17 +50,18 @@ void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int ro
         prev=find_prev(lst,price,&replace_tail);
         if(prev==NULL)//it means the new apart should be the head.
         {
-            p=create_apart(max_code++,addr,price,rooms,date_of_entrance,NULL,lst->head,time_stamp);
+            p=create_apart(code,addr,price,rooms,date_of_entrance,NULL,lst->head,time_stamp);
             lst->head=p;
         }
         else {
-            p = create_apart(max_code++, addr, price, rooms, date_of_entrance, prev, prev->next,time_stamp);
+            p = create_apart(code, addr, price, rooms, date_of_entrance, prev, prev->next,time_stamp);
             lst->tail->next = p;
             lst->tail = p;
             if(replace_tail)
                 lst->tail=p;
         }
     }
+    max_code=max_between_codes(max_code,code);
 }
 //finds the prev apart for the price of a new apartment.if the prev apartment is the head,returns NULL,if the prev apartment is the tail,returns the tail and changes replace_tail to true.
 struct apart* find_prev(struct apart_list* lst,int price,bool* replace_tail)
@@ -241,4 +245,11 @@ void make_empty_tm(struct tm* date)
     //date->tm_zone=0;
     date->tm_yday=0;
 
+}
+unsigned int max_between_codes(unsigned int a,unsigned int b)
+{
+    if(a>=b)
+        return a;
+    else
+        return b;
 }

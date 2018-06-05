@@ -7,7 +7,6 @@ int main() {
 	struct commend_list cmdlst;
 	char command[128];
 	char **commend_array;
-	max_code = 0;
 	aprtlst.head = aprtlst.tail = NULL; //remove
 	aprtlst = read_apartments();
     commend_array = malloc(sizeof(char *)* 7);
