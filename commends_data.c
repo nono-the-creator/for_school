@@ -18,7 +18,7 @@ void create_commend_list_node_and_add_to_head(char* commend,struct commend_list*
     commend_list_node1=(struct commend_list_node*)malloc(sizeof(struct commend_list_node));
     commend_list_node1->commend=commend;
     commend_list_node1->next=NULL;
-    add_commend_list_node_to_tail(commend_list_node1,lst);
+    add_commend_list_node_to_head(commend_list_node1,lst);
 }
 void add_commend_list_node_to_tail(struct commend_list_node* commend_list_node1,struct commend_list* lst)
 {
@@ -130,6 +130,7 @@ void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr
 }
 void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_arr)
 {
+
     FILE* file;
     file=fopen("commends_file","rt");
     if(!file)
@@ -191,4 +192,31 @@ void history (struct commend_list lst,char** arr)
 {
     print_com_arr(arr);
     printlist(lst);
+}
+void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,struct commend_list* lst)
+{
+    if(lst->head==NULL)
+    {
+        lst->head=commend_list_node1;
+        lst->tail=commend_list_node1;
+    }
+    else{
+        commend_list_node1->next=lst->head;
+        lst->head=commend_list_node1;
+    }
+}
+//gets a pointer to the head and reverse the list.
+void reverse(struct commend_list_node** head)
+{
+    struct commend_list_node* prev  = NULL;
+    struct commend_list_node* current = *head;
+    struct commend_list_node* next = NULL;
+    while (current != NULL)
+    {
+        next  = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    *head = prev;
 }

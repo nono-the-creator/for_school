@@ -15,6 +15,9 @@ int main() {
     read_commends_from_file(&cmdlst,commend_array);
     printf(">> ");
     history(cmdlst,commend_array);
+    reverse(&cmdlst.head);
+    printf("\nafter reverse:\n");
+    history(cmdlst,commend_array);
     gets(command);
     while(strcmp(command, "exit"))
 	{
