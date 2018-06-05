@@ -96,10 +96,6 @@ void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr
     FILE* file;
     file=fopen("commends_file","w");
     int i;
-    for(i=0;i<7;i++)
-    {
-        printf( "benj:%s \n" ,recent_commends_arr[i]);
-    }
     struct commend_list_node * p;
     p=c_lst->head;
     for(i=0;i<RECENT_COMMENDS_SIZE;i++)
@@ -126,6 +122,11 @@ void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_a
 {
     FILE* file;
     file=fopen("commends_file","rt");
+    if(!file)
+    {
+        printf(KRED"no commend file exist"KNRM"\n");
+        return;
+    }
     char buffer[MAXLINE];
     int i;
     struct commend_list_node * p;

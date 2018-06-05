@@ -20,7 +20,7 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
     if(time_stamp.year==-1) {
         res_apart->date_stamp.day = (short int) localtime(&epoch)->tm_mday;
         res_apart->date_stamp.month = (short int) localtime(&epoch)->tm_mon + (short int) 1;
-        res_apart->date_stamp.year = (short int) localtime(&epoch)->tm_year + (short int) 1900;
+        res_apart->date_stamp.year = (short int) localtime(&epoch)->tm_year - (short int) 100;
     }
     else{
         res_apart->date_stamp=time_stamp;

@@ -2,7 +2,6 @@
 #include "mainhadder.h"
 
 int main() {
-
 	struct apart_list aprtlst;
 	struct commend_list cmdlst;
 	char command[128];
