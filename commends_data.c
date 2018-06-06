@@ -72,6 +72,7 @@ void repeat_commend_by_number(char *init, char** recent_commends_array,struct co
 		 }
 		strcpy(buff, p->commend);
 	}
+	 printf(KRED "The amount is %d, buff is %s" KNRM "\n",commends_amount, buff);
 	if(!substring1)
 		interpert(buff, lst, recent_commends_array, c_lst);
 	 else
