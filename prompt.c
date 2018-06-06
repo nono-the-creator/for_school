@@ -126,6 +126,16 @@ void interpert(char *str, struct apart_list *lst, char **recent_commends_array, 
 		return;
 	}
 
+	if(strstr(str, "short_history"))
+	{
+		print_com_arr(recent_commends_array);
+		return;
+	}
+	if(strstr(str, "history"))
+	{
+		history( *clst, recent_commends_array);
+		return;
+	}
 
 	printf(KRED "Command entered: %s\n" KNRM, str); //DEBUG
 	if(!str) return;

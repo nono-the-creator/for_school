@@ -51,6 +51,8 @@ void repeat_commend_by_number(char *init, char** recent_commends_array,struct co
 	char *new;
 	char buff[MAXLINE];
 	 if(init[0] == '\0')
+		 return;
+	 if(init[0] == '!')
 		 num = 1;
 	else if(!strstr(init, "^"))
 		num = atoi(init);
@@ -72,6 +74,7 @@ void repeat_commend_by_number(char *init, char** recent_commends_array,struct co
 		 }
 		strcpy(buff, p->commend);
 	}
+	 printf(KRED "The amount is %d, buff is %s" KNRM "\n",commends_amount, buff);
 	if(!substring1)
 		interpert(buff, lst, recent_commends_array, c_lst);
 	 else
