@@ -95,4 +95,5 @@ void printlist(struct commend_list lst);
 unsigned int max_between_codes(unsigned int a,unsigned int b);
 void print_com_arr( char** arr);
 void history (struct commend_list lst,char** arr);
+void reverse(struct commend_list_node** head);
 #endif //SCHOOL_PROJECT_MAINHADDER_H
