@@ -19,7 +19,6 @@ int main() {
 		interpert(command, &aprtlst, commend_array, &cmdlst);
 		printf(">> ");
 		gets(command);
-        history(cmdlst,commend_array);
 
     }
     save_commends_to_file(&cmdlst,commend_array);
