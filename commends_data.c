@@ -184,9 +184,13 @@ void printlist(struct commend_list lst)
 }
 void print_com_arr(char** arr)
 {
-  int i,j=commends_amount-6;
-    ;
-    for(i=RECENT_COMMENDS_SIZE;i>-1;i--)
+  int i,j=commends_amount-6,lsize;
+    if(commends_amount<7)
+    {
+        lsize=commends_amount;
+    } else
+        lsize=RECENT_COMMENDS_SIZE;
+    for(i=lsize;i>-1;i--)
     {
         if(arr[i]!=NULL)
          printf("%d:%s\n",j++,arr[i]);
