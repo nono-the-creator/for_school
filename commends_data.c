@@ -190,7 +190,7 @@ void print_com_arr(char** arr)
         lsize=commends_amount;
         j=1;
     } else
-        lsize=RECENT_COMMENDS_SIZE;
+        lsize=RECENT_COMMENDS_SIZE - 1;
     for(i=lsize;i>-1;i--)
     {
         if(arr[i]!=NULL)
