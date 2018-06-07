@@ -170,13 +170,13 @@ void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_a
     fclose(file); }
 void printlist(struct commend_list lst)
 {
-    int i=0;
+    int i=0,j=7;
     struct commend_list_node *p;
     p=lst.head;
     printf("\nthis is the  list of commends:");
     while (p!=NULL)
     {
-        printf("%s\n",p->commend);
+        printf("%d:%s\n",j,p->commend);
         p=p->next;
         i++;
     }
@@ -184,11 +184,11 @@ void printlist(struct commend_list lst)
 void print_com_arr(char** arr)
 {
   int i=0;
-    printf("\nthis is the array of commends:");
+    printf("\nthis is the array of commends:\n");
     for(i=0;i<RECENT_COMMENDS_SIZE;i++)
     {
         if(arr[i]!=NULL)
-         printf("\n%s",arr[i]);
+         printf("%d:%s\n",i+1,arr[i]);
     }
 }
 void history (struct commend_list lst,char** arr)
