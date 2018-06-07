@@ -1,6 +1,9 @@
 //
 // Created by noam ambar on 01/06/2018.
-#include "mainhadder.h"
+#include "commends.h"
+#include "commends_data.h"
+#include "io.h"
+#include "prompt.h"
 void add_commend_list_node_to_tail(struct commend_list_node* commend_list_node1,struct commend_list* lst);
 void commends_saver(char* commend,char** recent_commends_array,struct commend_list* lst)
 {

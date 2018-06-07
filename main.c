@@ -1,6 +1,7 @@
-#include <stdio.h>
-#include "mainhadder.h"
-
+#include "commends.h"
+#include "commends_data.h"
+#include "io.h"
+#include "prompt.h"
 int main() {
 
     int commends_amount=0;

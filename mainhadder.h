@@ -53,6 +53,7 @@ struct apart_list{
     struct apart* head;
     struct apart* tail;
 };
+/*
 char **GetString(char *);
 
 void interpert(char *str, struct apart_list *lst, char **recent_commends_array, struct commend_list *clst);
@@ -77,12 +78,10 @@ void save_apartments(struct apart_list lst);
 struct apart_list read_apartments();
 void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance,unsigned int code,struct date time_stamp);
 char *str_replace(char *str, char *orig, char *rep);
-/*
  *
  * input: max price, rooms range and the latest date to enter the apartment.
  * -1 means ignoring the requirement,
  * output: prints all the apartment that suits the requirements.
- */
 
 char *get_dyn();
 struct date str_to_date (char *str);
@@ -102,5 +101,5 @@ void free_apt_lst(struct apart_list* lst);
 void free_commends_arr(char**arr);
 void free_commends_lst(struct commend_list* lst);
 void free_all(struct apart_list* apt_lst,char** com_arr,struct commend_list* cmd_lst);
-
+*/
 #endif //SCHOOL_PROJECT_MAINHADDER_H

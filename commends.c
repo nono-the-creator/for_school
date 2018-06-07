@@ -1,8 +1,10 @@
 //
 // Created by noam ambar on 04/05/2018.
 //
-#include <stdio.h>
-#include "mainhadder.h"
+#include "commends.h"
+#include "commends_data.h"
+#include "io.h"
+#include "prompt.h"
 //creates an apartment and returns a pointer to it,if theres no value insert -1.
 struct apart* create_apart(unsigned int code,char *addr,int price,short int rooms,struct date date_of_entrance,struct apart* prev ,struct apart* next,struct date time_stamp)
 {

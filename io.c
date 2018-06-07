@@ -2,8 +2,10 @@
  * This file contains the functions that interact with the FS
  */
 
-#include "mainhadder.h"
-
+#include "commends.h"
+#include "commends_data.h"
+#include "io.h"
+#include "prompt.h"
 void print_binary(char c)
 {
 	int i;

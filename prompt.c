@@ -1,5 +1,7 @@
-#include "mainhadder.h"
-
+#include "commends.h"
+#include "commends_data.h"
+#include "io.h"
+#include "prompt.h"
 char *get_dyn()
 {
 	char *ret;
