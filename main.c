@@ -15,7 +15,8 @@ int main() {
     read_commends_from_file(&cmdlst,commend_array);
     reverse(&(cmdlst.head));
     printf("Please enter one of the following commands:\n""add-an-apt, get-an-apt, buy-an-apt or delete-an-apt\n""For reconstruction commands, please enter:\n""!!, !num, history, short_history or !num^str1^str2\nTo exit, enter exit.");
-    printf("\n>>");
+    printf("\n>> ");
+	//print_com_arr(commend_array);
 	command = get_dyn();
     while(strcmp(command, "exit"))
 	{
