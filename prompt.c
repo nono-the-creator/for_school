@@ -66,7 +66,7 @@ void interpert_get(char *str, struct apart_list lst)
 		p = strtok(NULL, " ");
 	}
 	// call the print function with the proper paramters
-	printf(KRED "Sending print with price: %d, max_rooms: %d, min_rooms: %d sort %d" KNRM "\n", max_price, max_rooms, min_rooms,sort);
+	printf(KRED "Sending print with price: %d, max_rooms: %d, min_rooms: %d, sort: %d, date: %d-%d-%d" KNRM "\n", max_price, max_rooms, min_rooms,sort, min_date.day,min_date.month,min_date.year);
 	print_by_values(lst, max_price, max_rooms, min_rooms, min_date, sort);
 }
 void interpert_buy(char *str, struct apart_list *lst)

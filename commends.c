@@ -111,7 +111,7 @@ void print_by_values_up(struct apart_list lst,int max_price,int max_rooms,int mi
 			printf(KRED "the current room is %d" KNRM "\n", p->rooms);
             if (p->rooms <= max_rooms || max_rooms == -1) {
                 if (p->rooms >= min_rooms || min_rooms == -1) {
-                    if (is_later(p->date_of_entrance, min_date_of_enternce) || min_date_of_enternce.day == -1) {
+                    if (!is_later(p->date_of_entrance, min_date_of_enternce) || min_date_of_enternce.day == -1) {
                         print_apart(*p);
                     }
                 }
@@ -134,7 +134,7 @@ void print_by_values_down(struct apart_list lst,int max_price,int max_rooms,int 
             {
                 if(p->rooms>=min_rooms||min_rooms==-1)
                 {
-                    if(is_later(p->date_of_entrance,min_date_of_enternce)||min_date_of_enternce.day==-1)
+                    if(!is_later(p->date_of_entrance,min_date_of_enternce)||min_date_of_enternce.day==-1)
                     {
                         print_apart(*p);
                     }
@@ -164,9 +164,10 @@ bool is_later (struct date date1,struct date date2) {
 struct date str_to_date(char *str)
 {
 	struct date ret;
-	short int temp;
-	temp = (short int)atoi(str);
-	ret.year = temp%(short int)10000;
+	unsigned int temp;
+	temp = (unsigned int)atoi(str);
+	printf(KRED "The temp is %d" KNRM "\n", temp);
+	ret.year = temp%(short int)10000 - 2000;
 	temp/=10000;
 	ret.month = temp%(short int)100;
 	temp/=100;
