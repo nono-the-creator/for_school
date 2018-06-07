@@ -226,3 +226,22 @@ void reverse(struct commend_list_node** head)
     }
     *head = prev;
 }
+void free_commends_lst(struct commend_list* lst)
+{
+    struct commend_list_node* p=lst->head;
+    while(p!=NULL)
+    {
+        free(p->commend);
+        p=p->next;
+    }
+}
+void free_commends_arr(char**arr)
+{
+    int i;
+    for(i=0;i<RECENT_COMMENDS_SIZE;i++)
+    {
+        free(arr[i]);
+    }
+    free(arr);
+}
+

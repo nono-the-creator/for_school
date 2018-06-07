@@ -261,3 +261,18 @@ unsigned int max_between_codes(unsigned int a,unsigned int b)
     else
         return b;
 }
+void free_apt_lst(struct apart_list* lst)
+{
+    struct apart* p;
+    p=lst->head;
+    while(p!=NULL)
+    {
+        free_apt(p);
+        p=p->next;
+    }
+}
+void free_apt(struct apart* p)
+{
+    free(p->addr);
+    free(p);
+}

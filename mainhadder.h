@@ -97,4 +97,10 @@ unsigned int max_between_codes(unsigned int a,unsigned int b);
 void print_com_arr( char** arr);
 void history (struct commend_list lst,char** arr);
 void reverse(struct commend_list_node** head);
+void free_apt(struct apart* p);
+void free_apt_lst(struct apart_list* lst);
+void free_commends_arr(char**arr);
+void free_commends_lst(struct commend_list* lst);
+void free_all(struct apart_list* apt_lst,char** com_arr,struct commend_list* cmd_lst);
+
 #endif //SCHOOL_PROJECT_MAINHADDER_H
