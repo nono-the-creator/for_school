@@ -110,3 +110,10 @@ struct apart_list read_apartments()
 	}
 	return ret;
 }
+void free_all(struct apart_list* apt_lst,char** com_arr,struct commend_list* cmd_lst)
+{
+	free_apt_lst(apt_lst);
+    free_commends_lst(cmd_lst);
+    free_commends_arr(com_arr);
+
+}

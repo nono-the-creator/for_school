@@ -25,5 +25,6 @@ int main() {
     }
     save_commends_to_file(&cmdlst,commend_array);
 	save_apartments(aprtlst);
+    free_all(&aprtlst,commend_array,&cmdlst);
     return 0;
 }
