@@ -185,7 +185,10 @@ void buy_apartment(struct apart_list* lst, unsigned int code)
 	while(entry)
 	{
 		if(entry->code == code) //TODO:Add free
+		{
 			*p = entry->next;
+			free(entry);
+		}
 		p = &(entry->next);
 		entry = entry->next;
 	}
