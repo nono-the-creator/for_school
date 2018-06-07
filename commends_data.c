@@ -170,8 +170,9 @@ void read_commends_from_file(struct commend_list* c_lst,char** recent_commends_a
     fclose(file); }
 void printlist(struct commend_list lst)
 {
-    int j=7;
+    int j=1;
     struct commend_list_node *p;
+    reverse(&lst.head);
     p=lst.head;
     while (p!=NULL)
     {
@@ -179,10 +180,12 @@ void printlist(struct commend_list lst)
         p=p->next;
         j++;
     }
+    reverse(&lst.head);
 }
 void print_com_arr(char** arr)
 {
-  int i,j=1;
+  int i,j=commends_amount-6;
+    ;
     for(i=RECENT_COMMENDS_SIZE;i>-1;i--)
     {
         if(arr[i]!=NULL)
@@ -191,8 +194,9 @@ void print_com_arr(char** arr)
 }
 void history (struct commend_list lst,char** arr)
 {
-    print_com_arr(arr);
     printlist(lst);
+    print_com_arr(arr);
+
 }
 void add_commend_list_node_to_head(struct commend_list_node* commend_list_node1,struct commend_list* lst)
 {
