@@ -95,6 +95,7 @@ void print_apart(struct apart apart1)
 //gets gets all the conditions and sends to the sorted print by sr.
 void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce,bool sr)
 {
+	printf(KRED "max rooms: %d, min rooms: %d" KNRM "\n", max_rooms, min_rooms);
     if(sr)
         print_by_values_up(lst,max_price,max_rooms,min_rooms,min_date_of_enternce);
     else
@@ -104,10 +105,12 @@ void print_by_values(struct apart_list lst,int max_price,int max_rooms,int min_r
 void print_by_values_up(struct apart_list lst,int max_price,int max_rooms,int min_rooms,struct date min_date_of_enternce) {
     struct apart *p;
     p = lst.head;
+	printf(KRED "max rooms: %d, min rooms: %d" KNRM "\n", max_rooms, min_rooms);
     while (p != NULL) {
-        if ((p->price < max_price || max_price == -1)) {
-            if (p->rooms < max_rooms || max_rooms == -1) {
-                if (p->rooms > min_rooms || min_rooms == -1) {
+        if ((p->price <= max_price || max_price == -1)) {
+			printf(KRED "the current room is %d" KNRM "\n", p->rooms);
+            if (p->rooms <= max_rooms || max_rooms == -1) {
+                if (p->rooms >= min_rooms || min_rooms == -1) {
                     if (is_later(p->date_of_entrance, min_date_of_enternce) || min_date_of_enternce.day == -1) {
                         print_apart(*p);
                     }
@@ -125,11 +128,11 @@ void print_by_values_down(struct apart_list lst,int max_price,int max_rooms,int 
     p=lst.tail;
     while(p!=NULL)
     {
-        if((p->price<max_price||max_price==-1))
+        if((p->price<=max_price||max_price==-1))
         {
-            if(p->rooms<max_rooms||max_rooms==-1)
+            if(p->rooms<=max_rooms||max_rooms==-1)
             {
-                if(p->rooms>min_rooms||min_rooms==-1)
+                if(p->rooms>=min_rooms||min_rooms==-1)
                 {
                     if(is_later(p->date_of_entrance,min_date_of_enternce)||min_date_of_enternce.day==-1)
                     {
