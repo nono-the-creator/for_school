@@ -188,6 +188,7 @@ void print_com_arr(char** arr)
     if(commends_amount<7)
     {
         lsize=commends_amount;
+        j=1;
     } else
         lsize=RECENT_COMMENDS_SIZE;
     for(i=lsize;i>-1;i--)
