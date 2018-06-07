@@ -109,7 +109,7 @@ char *str_replace(char *str, char *orig, char *rep)
 	lenind = strlen(ind);
 	strncpy(ret, str, lenstr - lenind);
 	strcpy(ret + lenstr - lenind, rep);
-	strcpy(ret + lenstr - lenind + lenrep, str + lenstr - lenind + lenrep );
+	strcpy(ret + lenstr - lenind + lenrep, ind + lenorig );
 
 	printf(KRED "The string is now: %s" KNRM "\n", ret);
 
