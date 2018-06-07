@@ -84,6 +84,7 @@ char *str_replace(char *str, char *orig, char *rep);
  * output: prints all the apartment that suits the requirements.
  */
 
+char *get_dyn();
 struct date str_to_date (char *str);
 void delte_apart_in_env(struct apart_list* lst,int days_env);
 void save_commends_to_file(struct commend_list* c_lst,char** recent_commends_arr);
