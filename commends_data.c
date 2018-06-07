@@ -188,6 +188,7 @@ void print_com_arr(char** arr)
     ;
     for(i=RECENT_COMMENDS_SIZE;i>-1;i--)
     {
+		printf(KRED "Got here to com" KNRM "\n");
         if(arr[i]!=NULL)
          printf("%d:%s\n",j++,arr[i]);
     }

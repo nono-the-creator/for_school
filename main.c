@@ -6,7 +6,7 @@ int main() {
     int commends_amount=0;
     struct apart_list aprtlst;
 	struct commend_list cmdlst;
-	char command[128];
+	char *command;
 	char **commend_array;
 	commends_amount = 0;
 	aprtlst = read_apartments();
@@ -16,12 +16,12 @@ int main() {
     reverse(&(cmdlst.head));
     printf("Please enter one of the following commands:\n""add-an-apt, get-an-apt, buy-an-apt or delete-an-apt\n""For reconstruction commands, please enter:\n""!!, !num, history, short_history or !num^str1^str2\nTo exit, enter exit.");
     printf("\n>>");
-    gets(command);
+	command = get_dyn();
     while(strcmp(command, "exit"))
 	{
 		interpert(command, &aprtlst, commend_array, &cmdlst);
 		printf(">> ");
-		gets(command);
+		command = get_dyn();
     }
     save_commends_to_file(&cmdlst,commend_array);
 	save_apartments(aprtlst);

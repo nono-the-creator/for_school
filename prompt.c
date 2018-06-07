@@ -1,5 +1,29 @@
 #include "mainhadder.h"
 
+char *get_dyn()
+{
+	char *ret;
+	char ch;
+	int logic=0,phy=2;
+	ret = malloc(sizeof(char) *phy );
+	ch = getchar();
+	do
+	{
+		if(logic>=phy)
+		{
+			phy*=2;
+			ret = realloc(ret, sizeof(char)*phy);
+		}
+		ret[logic] = ch;
+		logic++;
+		ch = getchar();
+	}while(ch!='\n');
+	ret[logic] = '\0';
+	printf(KRED "The returned string is: %s" KNRM "\n",ret);
+	ret =realloc(ret, sizeof(char)*logic);
+	return ret;
+}
+
 void interpert_add(char *str, struct apart_list *lst)
 {
 
