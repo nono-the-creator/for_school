@@ -11,8 +11,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a7602ce-df27-4f03-9cee-02449e6369ff" name="Default" comment="phone call">
+    <list default="true" id="0a7602ce-df27-4f03-9cee-02449e6369ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/commends.c" afterPath="$PROJECT_DIR$/commends.c" />
+      <change beforePath="$PROJECT_DIR$/commends_data.c" afterPath="$PROJECT_DIR$/commends_data.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="for checks" pinned="false" current-in-tab="true">
+      <file leaf-file-name="for checks" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmake-build-debug/for checks">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -68,8 +70,8 @@
       <file leaf-file-name="commends.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commends.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="819">
-              <caret line="134" column="28" lean-forward="false" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="28" />
+            <state relative-caret-position="-1585">
+              <caret line="86" column="29" lean-forward="false" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
               <folding>
                 <element signature="e#46#64#0" expanded="true" />
                 <element signature="e#89#1122#0" expanded="false" />
@@ -78,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="commends_data.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="commends_data.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commends_data.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1903">
-              <caret line="179" column="18" lean-forward="false" selection-start-line="179" selection-start-column="18" selection-end-line="179" selection-end-column="18" />
+            <state relative-caret-position="276">
+              <caret line="184" column="12" lean-forward="false" selection-start-line="184" selection-start-column="12" selection-end-line="184" selection-end-column="12" />
               <folding>
                 <element signature="e#174#534#0" expanded="false" />
                 <element signature="e#535#939#0" expanded="false" />
@@ -149,9 +151,9 @@
         <option value="$PROJECT_DIR$/mainhadder.h" />
         <option value="$PROJECT_DIR$/cmake-build-debug/commends_file" />
         <option value="$PROJECT_DIR$/main.c" />
-        <option value="$PROJECT_DIR$/commends_data.c" />
         <option value="$PROJECT_DIR$/cmake-build-debug/for checks" />
         <option value="$PROJECT_DIR$/commends.c" />
+        <option value="$PROJECT_DIR$/commends_data.c" />
       </list>
     </option>
   </component>
@@ -360,7 +362,7 @@
       <workItem from="1526636988614" duration="616000" />
       <workItem from="1527152398835" duration="9077000" />
       <workItem from="1527841414084" duration="17871000" />
-      <workItem from="1528208255716" duration="21280000" />
+      <workItem from="1528208255716" duration="21961000" />
     </task>
     <task id="LOCAL-00001" summary="hey youre here">
       <created>1525429198484</created>
@@ -572,11 +574,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528304868251</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="textual changes.">
+      <created>1528355840996</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1528355840996</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77640000" />
+    <option name="totallyTimeSpent" value="78321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -634,7 +643,8 @@
     <MESSAGE value="worksssssss" />
     <MESSAGE value="push the but" />
     <MESSAGE value="phone call" />
-    <option name="LAST_COMMIT_MESSAGE" value="phone call" />
+    <MESSAGE value="textual changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="textual changes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1099,23 +1109,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commends_data.c">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/for checks">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1903">
-          <caret line="179" column="18" lean-forward="false" selection-start-line="179" selection-start-column="18" selection-end-line="179" selection-end-column="18" />
-          <folding>
-            <element signature="e#174#534#0" expanded="false" />
-            <element signature="e#535#939#0" expanded="false" />
-            <element signature="e#940#1263#0" expanded="false" />
-            <element signature="e#1264#1603#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commends.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="134" column="28" lean-forward="false" selection-start-line="134" selection-start-column="28" selection-end-line="134" selection-end-column="28" />
+        <state relative-caret-position="-1585">
+          <caret line="86" column="29" lean-forward="false" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
           <folding>
             <element signature="e#46#64#0" expanded="true" />
             <element signature="e#89#1122#0" expanded="false" />
@@ -1123,11 +1128,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/for checks">
+    <entry file="file://$PROJECT_DIR$/commends_data.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="276">
+          <caret line="184" column="12" lean-forward="false" selection-start-line="184" selection-start-column="12" selection-end-line="184" selection-end-column="12" />
+          <folding>
+            <element signature="e#174#534#0" expanded="false" />
+            <element signature="e#535#939#0" expanded="false" />
+            <element signature="e#940#1263#0" expanded="false" />
+            <element signature="e#1264#1603#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -32,7 +32,7 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
 //adding the apartment to the lists tail,fitting the proper code.
 void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int rooms,struct date date_of_entrance,unsigned int code,struct date time_stamp)
 {
-    static unsigned int max_code=0;
+    static unsigned int max_code=1;
     if(code==-1)
         code=max_code++;
     bool replace_tail=false;
@@ -84,6 +84,7 @@ struct apart* find_prev(struct apart_list* lst,int price,bool* replace_tail)
 //the "" is getting deleted in the print function.
 void print_apart(struct apart apart1)
 {
+    printf("\nApt details:");
     printf("Code: %d \n",apart1.code);
     printf("Address: %s\n ",apart1.addr);
     printf("Number of rooms: %d \n",apart1.rooms);
