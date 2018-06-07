@@ -10,6 +10,10 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
     time(&epoch);
     struct apart* res_apart;
     res_apart=(struct apart*)malloc(sizeof(struct apart));
+	if(prev)
+		prev->next = res_apart;
+	if(next)
+		next->prev = res_apart;
     res_apart->next=next;
     res_apart->prev=prev;
     res_apart->addr=addr;
@@ -26,7 +30,6 @@ struct apart* create_apart(unsigned int code,char *addr,int price,short int room
         res_apart->date_stamp=time_stamp;
     }
 
-	printf(KRED "Finishing creating the apartment" KNRM "\n");
     return res_apart;
 }
 //adding the apartment to the lists tail,fitting the proper code.
@@ -55,13 +58,13 @@ void add_apart_by_price(struct apart_list* lst,char *addr,int price,short int ro
         }
         else {
             p = create_apart(code, addr, price, rooms, date_of_entrance, prev, prev->next,time_stamp);
-            lst->tail->next = p;
-            lst->tail = p;
+            //lst->tail = p;
             if(replace_tail)
                 lst->tail=p;
         }
     }
     max_code=max_between_codes(max_code,code);
+	printf(KRED "Finishing creating the apartment" KNRM "\n");
 }
 //finds the prev apart for the price of a new apartment.if the prev apartment is the head,returns NULL,if the prev apartment is the tail,returns the tail and changes replace_tail to true.
 struct apart* find_prev(struct apart_list* lst,int price,bool* replace_tail)
@@ -127,6 +130,7 @@ void print_by_values_down(struct apart_list lst,int max_price,int max_rooms,int 
 {
     struct apart* p;
     p=lst.tail;
+	printf(KRED "%d" KNRM "\n", max_rooms);
     while(p!=NULL)
     {
         if((p->price<=max_price||max_price==-1))
@@ -176,23 +180,55 @@ struct date str_to_date(char *str)
 	return ret;
 
 }
+void buy_apartment(struct apart_list *lst, unsigned int code)
+{
+	struct apart *p, *temp;
+	p = lst->head;
+	if(p->code == code)
+	{
+		temp = p;
+		lst->head = p->next;
+		if(p == lst->tail) lst->tail = NULL;
+		free(temp);
+		return;
+	}
+	while(p->next)
+	{
+		if(p->code == code)
+		{
+			temp = p;
+			p->prev->next = p->next;
+			p->next->prev = p->prev;
+			free(temp);
+			return;
+		}
+		p=p->next;
+	}
+	lst->tail = p->prev;
+	p->prev->next = NULL;
+	free(p);
+}
+/*
 void buy_apartment(struct apart_list* lst, unsigned int code)
 {
-	struct apart **p;
+	struct apart **p, **pr;
 	struct apart *entry;
 	p = &(lst->head);
+	p = &(lst->head->next->prev);
 	entry = lst->head;
 	while(entry)
 	{
-		if(entry->code == code) //TODO:Add free
+		if(entry->code == code)
 		{
 			*p = entry->next;
-			free(entry);
+			*pr = entry->next;
+
 		}
 		p = &(entry->next);
+		pr = &(entry->next->prev);
 		entry = entry->next;
 	}
-}
+}*/
 //prints the apartments,by minimum distance from currnet time,the distance is indicated by the variable "days_env"
 void get_an_apart_enter(struct apart_list lst,int days_env)
 {
