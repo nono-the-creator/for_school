@@ -187,11 +187,9 @@ void print_com_arr(char** arr)
   int i,j=commends_amount-6;
     for(i=RECENT_COMMENDS_SIZE;i>-1;i--)
     {
-		printf(KRED "%d: Got here to com" KNRM "\n", i);
         if(arr[i]!=NULL)
          printf("%d:%s\n",j++,arr[i]);
     }
-	printf(KRED "Got past to com" KNRM "\n");
 }
 void history (struct commend_list lst,char** arr)
 {
